@@ -83,7 +83,6 @@ Rancangan wireframe antarmuka sistem dikerjakan oleh **Muhammad Daffa Dhiya Ulha
 ```text
 peminjaman-inventaris/
 ├── docs/
-│   ├── proposal-milestone-1.md   # Dokumen proposal perencanaan proyek
 │   └── AI_USAGE_LOG.md           # Catatan log penggunaan AI sesuai panduan PjBL
 ├── wireframe/
 │   └── index.html                # Prototipe wireframe interaktif (oleh M. Daffa)
