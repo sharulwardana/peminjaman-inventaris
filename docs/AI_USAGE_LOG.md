@@ -16,7 +16,7 @@
 * **Penjelasan Mahasiswa dengan Bahasa Sendiri:**  
   Poin-poin tersebut sangat relevan dengan kondisi riil di kampus saat meminjam alat praktikum atau proyektor. Pencatatan manual membuat petugas harus mengecek rak barang satu per satu dan sering lupa siapa yang sedang membawa barang tersebut.
 * **Penyesuaian / Perbaikan oleh Mahasiswa:**  
-  Menyusun kembali poin-poin tersebut dengan bahasa sendiri ke dalam bagian Latar Belakang Masalah pada file `README.md` dan proposal proyek.
+  Menyusun kembali poin-poin tersebut dengan bahasa sendiri ke dalam bagian Latar Belakang Masalah pada file `README.md` proyek.
 * **Hasil Pengujian:**  
   Latar belakang masalah tersusun dengan runtut dan sesuai dengan kondisi nyata yang dihadapi di kampus.
 
