@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe - Daftar Data Barang | SIPINJAM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f5f9;
+            color: #334155;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Navigasi */
+        aside {
+            width: 250px;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+
+        .sidebar-brand {
+            padding: 22px 20px;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .sidebar-brand h2 {
+            font-size: 19px;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar-brand span {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 20px 10px;
+            flex: 1;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 6px;
+        }
+
+        .sidebar-menu a {
+            display: block;
+            padding: 10px 14px;
+            color: #94a3b8;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .sidebar-menu a:hover {
+            background-color: #1e293b;
+            color: #ffffff;
+        }
+
+        .sidebar-menu a.active {
+            background-color: #2563eb;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .sidebar-footer {
+            padding: 15px 20px;
+            border-top: 1px solid #1e293b;
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        /* Konten Utama */
+        .main-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .top-notice {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 10px 24px;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-notice a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 16px 28px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .page-heading h1 {
+            font-size: 20px;
+            color: #0f172a;
+        }
+
+        .page-heading p {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        main {
+            padding: 28px;
+            flex: 1;
+        }
+
+        /* Toolbar Kontrol Data */
+        .toolbar {
+            background-color: #ffffff;
+            padding: 16px 20px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .input-search, .select-category {
+            padding: 8px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 13px;
+            background-color: #f8fafc;
+        }
+
+        .input-search {
+            width: 240px;
+        }
+
+        .btn-add {
+            background-color: #2563eb;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 9px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-add:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Tabel Data */
+        .table-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: #475569;
+            font-weight: 600;
+            padding: 12px 16px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #f1f5f9;
+            color: #334155;
+            vertical-align: middle;
+        }
+
+        .badge-status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .status-tersedia { background-color: #dcfce7; color: #166534; }
+        .status-dipinjam { background-color: #fef3c7; color: #92400e; }
+
+        .btn-edit, .btn-delete {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            margin-right: 4px;
+        }
+
+        .btn-edit {
+            background-color: #e2e8f0;
+            color: #1e293b;
+        }
+
+        .btn-edit:hover { background-color: #cbd5e1; }
+
+        .btn-delete {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+
+        .btn-delete:hover { background-color: #fecaca; }
+
+        /* Pagination */
+        .pagination-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .pagination-buttons {
+            display: flex;
+            gap: 6px;
+        }
+
+        .page-btn {
+            padding: 5px 10px;
+            border: 1px solid #cbd5e1;
+            background-color: #ffffff;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #334155;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .page-btn.active {
+            background-color: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside>
+        <div class="sidebar-brand">
+            <h2>SIPINJAM</h2>
+            <span>Sistem Inventaris Kampus</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="daftar-barang.html" class="active">Data Barang</a></li>
+            <li><a href="form-peminjaman.html">Peminjaman Baru</a></li>
+            <li><a href="login.html">Keluar (Logout)</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            Admin Lab TI UDINUS
+        </div>
+    </aside>
+
+    <!-- Konten Utama -->
+    <div class="main-wrapper">
+        <div class="top-notice">
+            <span>[WIREFRAME 03] Rancangan Antarmuka Tabel Data & Pagination</span>
+            <a href="index.html">&larr; Kembali ke Indeks Wireframe</a>
+        </div>
+
+        <header>
+            <div class="page-heading">
+                <h1>Data Barang Inventaris</h1>
+                <p>Kelola data peralatan, kondisi fisik, dan status peminjaman barang</p>
+            </div>
+        </header>
+
+        <main>
+            <!-- Toolbar Pencarian & Aksi -->
+            <div class="toolbar">
+                <div class="filter-group">
+                    <input type="text" class="input-search" placeholder="Cari nama atau kode barang...">
+                    <select class="select-category">
+                        <option value="">Semua Kategori</option>
+                        <option value="av">Peralatan Audio Visual</option>
+                        <option value="aksesoris">Aksesoris Komputer</option>
+                        <option value="lab">Alat Laboratorium</option>
+                    </select>
+                </div>
+                <a href="form-peminjaman.html" class="btn-add">+ Catat Peminjaman</a>
+            </div>
+
+            <!-- Tabel Data Inventaris -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Kode</th>
+                            <th>Nama Barang</th>
+                            <th>Kategori</th>
+                            <th>Kondisi</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><strong>BRG-001</strong></td>
+                            <td>Proyektor Epson EB-X500</td>
+                            <td>Audio Visual</td>
+                            <td>Baik</td>
+                            <td><span class="badge-status status-dipinjam">Dipinjam</span></td>
+                            <td>
+                                <button class="btn-edit">Edit</button>
+                                <button class="btn-delete" onclick="konfirmasiHapus('BRG-001')">Hapus</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><strong>BRG-002</strong></td>
+                            <td>Kamera Canon EOS 3000D</td>
+                            <td>Dokumentasi</td>
+                            <td>Baik</td>
+                            <td><span class="badge-status status-dipinjam">Dipinjam</span></td>
+                            <td>
+                                <button class="btn-edit">Edit</button>
+                                <button class="btn-delete" onclick="konfirmasiHapus('BRG-002')">Hapus</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><strong>BRG-003</strong></td>
+                            <td>Pointer Wireless Logitech</td>
+                            <td>Aksesoris</td>
+                            <td>Baik</td>
+                            <td><span class="badge-status status-tersedia">Tersedia</span></td>
+                            <td>
+                                <button class="btn-edit">Edit</button>
+                                <button class="btn-delete" onclick="konfirmasiHapus('BRG-003')">Hapus</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><strong>BRG-004</strong></td>
+                            <td>Kabel HDMI 10 Meter</td>
+                            <td>Aksesoris</td>
+                            <td>Baik</td>
+                            <td><span class="badge-status status-tersedia">Tersedia</span></td>
+                            <td>
+                                <button class="btn-edit">Edit</button>
+                                <button class="btn-delete" onclick="konfirmasiHapus('BRG-004')">Hapus</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><strong>BRG-005</strong></td>
+                            <td>Modul Arduino Uno Starter Kit</td>
+                            <td>Alat Lab</td>
+                            <td>Baik</td>
+                            <td><span class="badge-status status-tersedia">Tersedia</span></td>
+                            <td>
+                                <button class="btn-edit">Edit</button>
+                                <button class="btn-delete" onclick="konfirmasiHapus('BRG-005')">Hapus</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Navigasi Pagination (Rancangan AJAX) -->
+            <div class="pagination-bar">
+                <span>Menampilkan data 1 - 5 dari total 48 barang</span>
+                <div class="pagination-buttons">
+                    <button class="page-btn">&laquo; Sebelumnya</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">Berikutnya &raquo;</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script Simulasi Konfirmasi Hapus -->
+    <script>
+        function konfirmasiHapus(kode) {
+            if (confirm("Apakah Anda yakin ingin menghapus data barang " + kode + "? Tindakan ini tidak dapat dibatalkan.")) {
+                alert("Simulasi wireframe: Data " + kode + " telah dikonfirmasi untuk dihapus.");
+            }
+        }
+    </script>
+</body>
+</html>

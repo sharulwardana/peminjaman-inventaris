@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indeks Wireframe - SIPINJAM (Milestone 1)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header-box {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            border-left: 6px solid #2563eb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            margin-bottom: 30px;
+        }
+
+        .header-box h1 {
+            font-size: 24px;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+
+        .header-box p {
+            color: #64748b;
+            font-size: 15px;
+        }
+
+        .badge-milestone {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            font-weight: 600;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 22px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+        }
+
+        .card-num {
+            font-size: 12px;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #475569;
+            margin-bottom: 18px;
+        }
+
+        .btn-preview {
+            display: block;
+            text-align: center;
+            background-color: #2563eb;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-preview:hover {
+            background-color: #1d4ed8;
+        }
+
+        .info-box {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #cbd5e1;
+            font-size: 14px;
+            color: #475569;
+        }
+
+        .info-box h3 {
+            font-size: 16px;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+
+        .info-box ul {
+            margin-left: 20px;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-box">
+        <span class="badge-milestone">Milestone 1 - PjBL Pemrograman Berbasis Web</span>
+        <h1>Rancangan Wireframe Sistem Peminjaman Inventaris (SIPINJAM)</h1>
+        <p>Halaman navigasi untuk meninjau rancangan antarmuka (wireframe) halaman inti sebelum tahap implementasi kode PHP dan basis data.</p>
+    </div>
+
+    <div class="grid-cards">
+        <!-- 1. Login -->
+        <div class="card">
+            <div>
+                <span class="card-num">Wireframe 01</span>
+                <h2>Halaman Login</h2>
+                <p>Formulir autentikasi pengguna dengan input username, kata sandi, dan tombol masuk sistem.</p>
+            </div>
+            <a href="login.html" class="btn-preview">Buka Wireframe Login &rarr;</a>
+        </div>
+
+        <!-- 2. Dashboard -->
+        <div class="card">
+            <div>
+                <span class="card-num">Wireframe 02</span>
+                <h2>Halaman Dashboard</h2>
+                <p>Halaman beranda admin berisi ringkasan data inventaris, status barang, dan jam interaktif.</p>
+            </div>
+            <a href="dashboard.html" class="btn-preview">Buka Wireframe Dashboard &rarr;</a>
+        </div>
+
+        <!-- 3. Daftar Data -->
+        <div class="card">
+            <div>
+                <span class="card-num">Wireframe 03</span>
+                <h2>Tabel Daftar Barang</h2>
+                <p>Daftar inventaris dengan kolom kategori, status ketersediaan, pencarian, dan pagination.</p>
+            </div>
+            <a href="daftar-barang.html" class="btn-preview">Buka Wireframe Tabel Data &rarr;</a>
+        </div>
+
+        <!-- 4. Form Input -->
+        <div class="card">
+            <div>
+                <span class="card-num">Wireframe 04</span>
+                <h2>Form Peminjaman</h2>
+                <p>Formulir pencatatan transaksi peminjaman barang baru lengkap dengan batas waktu dan keperluan.</p>
+            </div>
+            <a href="form-peminjaman.html" class="btn-preview">Buka Wireframe Form &rarr;</a>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <h3>Catatan Milestone 1:</h3>
+        <ul>
+            <li>Wireframe ini dirancang dengan gaya <em>low-to-medium fidelity</em> untuk memfokuskan penilaian pada tata letak, alur navigasi, dan kebutuhan informasi.</li>
+            <li>Antar-halaman wireframe saling terhubung sehingga alur pengguna dari login hingga pengelolaan data dapat disimulasikan secara langsung di peramban.</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

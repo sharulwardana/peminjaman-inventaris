@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe - Halaman Dashboard | SIPINJAM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f5f9;
+            color: #334155;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Navigasi */
+        aside {
+            width: 250px;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+
+        .sidebar-brand {
+            padding: 22px 20px;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .sidebar-brand h2 {
+            font-size: 19px;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar-brand span {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 20px 10px;
+            flex: 1;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 6px;
+        }
+
+        .sidebar-menu a {
+            display: block;
+            padding: 10px 14px;
+            color: #94a3b8;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .sidebar-menu a:hover {
+            background-color: #1e293b;
+            color: #ffffff;
+        }
+
+        .sidebar-menu a.active {
+            background-color: #2563eb;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .sidebar-footer {
+            padding: 15px 20px;
+            border-top: 1px solid #1e293b;
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        /* Area Konten Utama */
+        .main-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Bilah Info Wireframe */
+        .top-notice {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 10px 24px;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-notice a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Header Dashboard */
+        header {
+            background-color: #ffffff;
+            padding: 16px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .page-heading h1 {
+            font-size: 20px;
+            color: #0f172a;
+        }
+
+        .page-heading p {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        /* Widget Jam & Profil */
+        .header-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .time-box {
+            font-size: 13px;
+            background-color: #f8fafc;
+            padding: 6px 14px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            color: #1e293b;
+            font-weight: 500;
+        }
+
+        .user-profile {
+            font-size: 13px;
+            color: #334155;
+            font-weight: 600;
+        }
+
+        /* Konten Halaman */
+        main {
+            padding: 28px;
+            flex: 1;
+        }
+
+        /* Kartu Statistik Ringkasan */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+
+        .stat-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .stat-card .label {
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .stat-card .value {
+            font-size: 26px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .stat-card .subtext {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+
+        .card-blue { border-top: 4px solid #2563eb; }
+        .card-green { border-top: 4px solid #16a34a; }
+        .card-amber { border-top: 4px solid #d97706; }
+        .card-purple { border-top: 4px solid #7c3aed; }
+
+        /* Tabel Cuplikan Transaksi */
+        .content-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            padding: 22px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .card-header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .card-header-flex h3 {
+            font-size: 16px;
+            color: #0f172a;
+        }
+
+        .btn-action {
+            display: inline-block;
+            background-color: #2563eb;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .btn-action:hover {
+            background-color: #1d4ed8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: #475569;
+            font-weight: 600;
+            padding: 12px 14px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #f1f5f9;
+            color: #334155;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .badge-warning { background-color: #fef3c7; color: #92400e; }
+        .badge-success { background-color: #dcfce7; color: #166534; }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Navigasi -->
+    <aside>
+        <div class="sidebar-brand">
+            <h2>SIPINJAM</h2>
+            <span>Sistem Inventaris Kampus</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            <li><a href="daftar-barang.html">Data Barang</a></li>
+            <li><a href="form-peminjaman.html">Peminjaman Baru</a></li>
+            <li><a href="login.html">Keluar (Logout)</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            Admin Lab TI UDINUS
+        </div>
+    </aside>
+
+    <!-- Konten Utama -->
+    <div class="main-wrapper">
+        <!-- Bilah Info Wireframe -->
+        <div class="top-notice">
+            <span>[WIREFRAME 02] Rancangan Antarmuka Dashboard Admin</span>
+            <a href="index.html">&larr; Kembali ke Indeks Wireframe</a>
+        </div>
+
+        <!-- Header Dashboard -->
+        <header>
+            <div class="page-heading">
+                <h1>Dashboard Pengelolaan</h1>
+                <p>Ringkasan status barang inventaris dan transaksi aktif</p>
+            </div>
+            <div class="header-meta">
+                <div class="time-box" id="live-clock">
+                    Memuat waktu...
+                </div>
+                <div class="user-profile">
+                    Admin Petugas
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Body -->
+        <main>
+            <!-- 4 Kartu Statistik -->
+            <div class="stats-grid">
+                <div class="stat-card card-blue">
+                    <div class="label">Total Inventaris</div>
+                    <div class="value">48</div>
+                    <div class="subtext">Unit barang terdata</div>
+                </div>
+
+                <div class="stat-card card-green">
+                    <div class="label">Barang Tersedia</div>
+                    <div class="value">36</div>
+                    <div class="subtext">Siap untuk dipinjam</div>
+                </div>
+
+                <div class="stat-card card-amber">
+                    <div class="label">Sedang Dipinjam</div>
+                    <div class="value">12</div>
+                    <div class="subtext">Unit barang di luar</div>
+                </div>
+
+                <div class="stat-card card-purple">
+                    <div class="label">Transaksi Aktif</div>
+                    <div class="value">7</div>
+                    <div class="subtext">Peminjaman belum kembali</div>
+                </div>
+            </div>
+
+            <!-- Tabel Transaksi Terbaru -->
+            <div class="content-card">
+                <div class="card-header-flex">
+                    <h3>Transaksi Peminjaman Terbaru</h3>
+                    <a href="form-peminjaman.html" class="btn-action">+ Catat Peminjaman Baru</a>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Peminjam</th>
+                            <th>Barang</th>
+                            <th>Tgl Pinjam</th>
+                            <th>Batas Kembali</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Budi Santoso (A11.2023.14920)</td>
+                            <td>Proyektor Epson EB-X500</td>
+                            <td>08 Okt 2026</td>
+                            <td>09 Okt 2026</td>
+                            <td><span class="badge badge-warning">Dipinjam</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Siti Rahmawati (A11.2023.14988)</td>
+                            <td>Kamera Canon EOS 3000D</td>
+                            <td>07 Okt 2026</td>
+                            <td>08 Okt 2026</td>
+                            <td><span class="badge badge-warning">Dipinjam</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Ahmad Fauzan (A11.2022.13840)</td>
+                            <td>Pointer Wireless Logitech</td>
+                            <td>06 Okt 2026</td>
+                            <td>06 Okt 2026</td>
+                            <td><span class="badge badge-success">Dikembalikan</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Dinda Permata (A11.2024.15201)</td>
+                            <td>Kabel Konverter HDMI to VGA</td>
+                            <td>05 Okt 2026</td>
+                            <td>05 Okt 2026</td>
+                            <td><span class="badge badge-success">Dikembalikan</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script Waktu JavaScript -->
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const opsi = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            document.getElementById('live-clock').innerText = now.toLocaleDateString('id-ID', opsi);
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
