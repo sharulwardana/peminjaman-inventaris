@@ -3,199 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indeks Wireframe - SIPINJAM (Milestone 1)</title>
+    <title>Wireframe - PINJES</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --color-primary: #00AA5B;
+            --color-primary-hover: #008A4A;
+            --color-bg: #F3F4F5;
+            --color-surface: #FFFFFF;
+            --color-text-dark: #31353B;
+            --color-text-muted: #6D7588;
+            --color-border: #E5E7E9;
+            --shadow-card: 0 1px 6px 0 rgba(49,53,59,0.12);
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f1f5f9;
-            color: #1e293b;
-            padding: 40px 20px;
-            line-height: 1.6;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Nunito', sans-serif; }
+        body { background-color: var(--color-bg); color: var(--color-text-dark); }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+        /* Komponen Umum */
+        .btn { padding: 10px 16px; border-radius: 8px; border: none; font-weight: 700; cursor: pointer; font-size: 14px; transition: 0.2s;}
+        .btn-primary { background-color: var(--color-primary); color: white; }
+        .btn-primary:hover { background-color: var(--color-primary-hover); }
+        .btn-outline { background-color: white; border: 1px solid var(--color-border); color: var(--color-text-muted); }
+        .btn-outline:hover { background-color: var(--color-bg); }
+        
+        .card { background-color: var(--color-surface); border-radius: 8px; box-shadow: var(--shadow-card); padding: 20px; }
+        .form-control { width: 100%; padding: 10px 12px; border: 1px solid var(--color-border); border-radius: 8px; font-size: 14px; margin-top: 6px; outline: none; }
+        .form-control:focus { border-color: var(--color-primary); }
+        .form-group { margin-bottom: 16px; }
+        .form-label { font-weight: 600; font-size: 13px; color: var(--color-text-muted); }
 
-        .header-box {
-            background-color: #ffffff;
-            border-radius: 10px;
-            padding: 30px;
-            border-left: 6px solid #2563eb;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            margin-bottom: 30px;
-        }
+        /* Halaman Login */
+        #login-page { display: flex; height: 100vh; align-items: center; justify-content: center; }
+        .login-box { width: 100%; max-width: 400px; text-align: center; }
+        .login-logo { font-size: 32px; font-weight: 800; color: var(--color-primary); margin-bottom: 24px; }
 
-        .header-box h1 {
-            font-size: 24px;
-            color: #0f172a;
-            margin-bottom: 6px;
-        }
+        /* Layout Utama (Dashboard dkk) */
+        #main-layout { display: none; height: 100vh; flex-direction: column; }
+        
+        /* Navbar */
+        .navbar { background-color: var(--color-surface); height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; box-shadow: var(--shadow-card); position: sticky; top: 0; z-index: 10; }
+        .nav-logo { font-size: 20px; font-weight: 800; color: var(--color-primary); cursor: pointer;}
+        .nav-right { display: flex; align-items: center; gap: 16px; font-size: 14px; font-weight: 600; }
+        
+        /* Sidebar & Konten */
+        .wrapper { display: flex; flex: 1; overflow: hidden; }
+        .sidebar { width: 250px; background-color: var(--color-surface); border-right: 1px solid var(--color-border); padding: 16px 0; }
+        .sidebar-menu li { padding: 12px 24px; cursor: pointer; font-weight: 600; color: var(--color-text-muted); transition: 0.2s; }
+        .sidebar-menu li:hover, .sidebar-menu li.active { color: var(--color-primary); background-color: #E6F6ED; border-left: 4px solid var(--color-primary); }
+        .content { flex: 1; padding: 24px; overflow-y: auto; }
 
-        .header-box p {
-            color: #64748b;
-            font-size: 15px;
-        }
+        /* Grid Dashboard */
+        .dashboard-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+        .stat-card { text-align: left; }
+        .stat-title { font-size: 14px; color: var(--color-text-muted); }
+        .stat-value { font-size: 24px; font-weight: 800; color: var(--color-text-dark); margin-top: 8px; }
 
-        .badge-milestone {
-            display: inline-block;
-            background-color: #dbeafe;
-            color: #1d4ed8;
-            font-weight: 600;
-            font-size: 12px;
-            padding: 4px 10px;
-            border-radius: 20px;
-            margin-bottom: 12px;
-        }
+        /* Tabel Data */
+        .table-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .search-box { width: 250px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--color-border); font-size: 14px; }
+        th { background-color: var(--color-bg); font-weight: 700; color: var(--color-text-muted); }
+        .status-badge { padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 700; }
+        .status-available { background-color: #E6F6ED; color: var(--color-primary); }
+        .status-borrowed { background-color: #FFF0E5; color: #FA591D; }
 
-        .grid-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-            margin-bottom: 35px;
-        }
+        /* Pagination */
+        .pagination { display: flex; justify-content: flex-end; gap: 8px; }
+        .page-item { padding: 6px 12px; border: 1px solid var(--color-border); border-radius: 4px; font-size: 12px; cursor: pointer; }
+        .page-item.active { background-color: var(--color-primary); color: white; border-color: var(--color-primary); }
 
-        .card {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 22px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border: 1px solid #e2e8f0;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-        }
-
-        .card-num {
-            font-size: 12px;
-            font-weight: 700;
-            color: #94a3b8;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .card h2 {
-            font-size: 18px;
-            color: #0f172a;
-            margin-bottom: 8px;
-        }
-
-        .card p {
-            font-size: 14px;
-            color: #475569;
-            margin-bottom: 18px;
-        }
-
-        .btn-preview {
-            display: block;
-            text-align: center;
-            background-color: #2563eb;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 10px 16px;
-            border-radius: 6px;
-            font-weight: 500;
-            font-size: 14px;
-            transition: background-color 0.2s;
-        }
-
-        .btn-preview:hover {
-            background-color: #1d4ed8;
-        }
-
-        .info-box {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 20px;
-            border: 1px solid #cbd5e1;
-            font-size: 14px;
-            color: #475569;
-        }
-
-        .info-box h3 {
-            font-size: 16px;
-            color: #0f172a;
-            margin-bottom: 6px;
-        }
-
-        .info-box ul {
-            margin-left: 20px;
-            margin-top: 6px;
-        }
+        /* Halaman (Views) */
+        .view-section { display: none; }
+        .view-section.active { display: block; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header-box">
-        <span class="badge-milestone">Milestone 1 - PjBL Pemrograman Berbasis Web</span>
-        <h1>Rancangan Wireframe Sistem Peminjaman Inventaris (SIPINJAM)</h1>
-        <p>Halaman navigasi untuk meninjau rancangan antarmuka (wireframe) halaman inti sebelum tahap implementasi kode PHP dan basis data.</p>
-    </div>
-
-    <div class="grid-cards">
-        <!-- 1. Login -->
-        <div class="card">
-            <div>
-                <span class="card-num">Wireframe 01</span>
-                <h2>Halaman Login</h2>
-                <p>Formulir autentikasi pengguna dengan input username, kata sandi, dan tombol masuk sistem.</p>
+    <!-- 1. HALAMAN LOGIN -->
+    <div id="login-page">
+        <div class="card login-box">
+            <div class="login-logo">PINJES</div>
+            <h2 style="font-size: 18px; margin-bottom: 20px;">Masuk ke Akun Anda</h2>
+            <div class="form-group" style="text-align: left;">
+                <label class="form-label">Email / Username</label>
+                <input type="text" class="form-control" placeholder="Contoh: admin@kampus.ac.id">
             </div>
-            <a href="login.html" class="btn-preview">Buka Wireframe Login &rarr;</a>
-        </div>
-
-        <!-- 2. Dashboard -->
-        <div class="card">
-            <div>
-                <span class="card-num">Wireframe 02</span>
-                <h2>Halaman Dashboard</h2>
-                <p>Halaman beranda admin berisi ringkasan data inventaris, status barang, dan jam interaktif.</p>
+            <div class="form-group" style="text-align: left;">
+                <label class="form-label">Kata Sandi</label>
+                <input type="password" class="form-control" placeholder="Masukkan kata sandi">
             </div>
-            <a href="dashboard.html" class="btn-preview">Buka Wireframe Dashboard &rarr;</a>
-        </div>
-
-        <!-- 3. Daftar Data -->
-        <div class="card">
-            <div>
-                <span class="card-num">Wireframe 03</span>
-                <h2>Tabel Daftar Barang</h2>
-                <p>Daftar inventaris dengan kolom kategori, status ketersediaan, pencarian, dan pagination.</p>
-            </div>
-            <a href="daftar-barang.html" class="btn-preview">Buka Wireframe Tabel Data &rarr;</a>
-        </div>
-
-        <!-- 4. Form Input -->
-        <div class="card">
-            <div>
-                <span class="card-num">Wireframe 04</span>
-                <h2>Form Peminjaman</h2>
-                <p>Formulir pencatatan transaksi peminjaman barang baru lengkap dengan batas waktu dan keperluan.</p>
-            </div>
-            <a href="form-peminjaman.html" class="btn-preview">Buka Wireframe Form &rarr;</a>
+            <button class="btn btn-primary" style="width: 100%; margin-top: 10px;" onclick="login()">Masuk</button>
         </div>
     </div>
 
-    <div class="info-box">
-        <h3>Catatan Milestone 1:</h3>
-        <ul>
-            <li>Wireframe ini dirancang dengan gaya <em>low-to-medium fidelity</em> untuk memfokuskan penilaian pada tata letak, alur navigasi, dan kebutuhan informasi.</li>
-            <li>Antar-halaman wireframe saling terhubung sehingga alur pengguna dari login hingga pengelolaan data dapat disimulasikan secara langsung di peramban.</li>
-        </ul>
-    </div>
-</div>
+    <!-- LAYOUT UTAMA (Dashboard, Data, Form) -->
+    <div id="main-layout">
+        <nav class="navbar">
+            <div class="nav-logo" onclick="showView('dashboard')">PINJES</div>
+            <div class="nav-right">
+                <span id="realtime-clock" style="color: var(--color-text-muted);">00:00:00</span>
+                <div style="width: 32px; height: 32px; background: var(--color-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">A</div>
+                <span>Admin Kampus</span>
+            </div>
+        </nav>
 
+        <div class="wrapper">
+            <aside class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="active" id="menu-dashboard" onclick="showView('dashboard')">Beranda</li>
+                    <li id="menu-kategori" onclick="showView('data')">Kategori Barang</li>
+                    <li id="menu-barang" onclick="showView('data')">Kelola Barang</li>
+                    <li id="menu-peminjaman" onclick="showView('data')">Transaksi Peminjaman</li>
+                    <li style="margin-top: 20px; color: #D71149;" onclick="logout()">Keluar</li>
+                </ul>
+            </aside>
+
+            <main class="content">
+                
+                <!-- 2. HALAMAN DASHBOARD -->
+                <div id="view-dashboard" class="view-section active">
+                    <h2 style="margin-bottom: 20px;">Ringkasan Inventaris</h2>
+                    <div class="dashboard-grid">
+                        <div class="card stat-card">
+                            <div class="stat-title">Total Barang</div>
+                            <div class="stat-value">124</div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="stat-title">Barang Tersedia</div>
+                            <div class="stat-value" style="color: var(--color-primary);">102</div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="stat-title">Sedang Dipinjam</div>
+                            <div class="stat-value" style="color: #FA591D;">22</div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="stat-title">Total Transaksi</div>
+                            <div class="stat-value">845</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 style="font-size: 16px; margin-bottom: 16px;">Aktivitas Peminjaman Terbaru</h3>
+                        <p style="color: var(--color-text-muted); font-size: 14px;">(Grafik atau tabel singkat akan tampil di sini)</p>
+                    </div>
+                </div>
+
+                <!-- 3. HALAMAN DAFTAR DATA (TABEL) -->
+                <div id="view-data" class="view-section">
+                    <div class="card">
+                        <div class="table-header">
+                            <h2 style="font-size: 18px;">Daftar Barang Inventaris</h2>
+                            <div style="display: flex; gap: 10px;">
+                                <input type="text" class="form-control search-box" placeholder="Cari nama barang...">
+                                <button class="btn btn-primary" onclick="showView('form')">+ Tambah Barang</button>
+                            </div>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Barang</th>
+                                    <th>Kategori</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Proyektor Epson EB-X05</td>
+                                    <td>Elektronik</td>
+                                    <td><span class="status-badge status-available">Tersedia</span></td>
+                                    <td>
+                                        <button class="btn btn-outline" style="padding: 4px 8px;">Edit</button>
+                                        <button class="btn btn-outline" style="padding: 4px 8px; color: #D71149;">Hapus</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Kamera DSLR Canon 90D</td>
+                                    <td>Multimedia</td>
+                                    <td><span class="status-badge status-borrowed">Dipinjam</span></td>
+                                    <td>
+                                        <button class="btn btn-outline" style="padding: 4px 8px;">Edit</button>
+                                        <button class="btn btn-outline" style="padding: 4px 8px; color: #D71149;">Hapus</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Mikrofon Wireless Shure</td>
+                                    <td>Audio</td>
+                                    <td><span class="status-badge status-available">Tersedia</span></td>
+                                    <td>
+                                        <button class="btn btn-outline" style="padding: 4px 8px;">Edit</button>
+                                        <button class="btn btn-outline" style="padding: 4px 8px; color: #D71149;">Hapus</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="pagination">
+                            <div class="page-item">Sebelumnya</div>
+                            <div class="page-item active">1</div>
+                            <div class="page-item">2</div>
+                            <div class="page-item">Selanjutnya</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. HALAMAN FORM (TAMBAH DATA) -->
+                <div id="view-form" class="view-section">
+                    <div class="card" style="max-width: 600px;">
+                        <h2 style="font-size: 18px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--color-border);">Tambah Data Barang Baru</h2>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Nama Barang</label>
+                            <input type="text" class="form-control" placeholder="Masukkan nama barang lengkap">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Kategori</label>
+                            <select class="form-control">
+                                <option>Pilih Kategori</option>
+                                <option>Elektronik</option>
+                                <option>Multimedia</option>
+                                <option>Alat Laboratorium</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Deskripsi / Kondisi Barang</label>
+                            <textarea class="form-control" rows="3" placeholder="Tuliskan spesifikasi atau kondisi fisik barang..."></textarea>
+                        </div>
+
+                        <div style="display: flex; gap: 10px; margin-top: 24px; justify-content: flex-end;">
+                            <button class="btn btn-outline" onclick="showView('data')">Batal</button>
+                            <button class="btn btn-primary" onclick="showView('data')">Simpan Barang</button>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Script Sederhana untuk Navigasi Wireframe & Waktu -->
+    <script>
+        // Simulasi Login
+        function login() {
+            document.getElementById('login-page').style.display = 'none';
+            document.getElementById('main-layout').style.display = 'flex';
+            showView('dashboard');
+        }
+
+        // Simulasi Logout
+        function logout() {
+            document.getElementById('main-layout').style.display = 'none';
+            document.getElementById('login-page').style.display = 'flex';
+        }
+
+        // Navigasi Halaman Wireframe
+        function showView(viewId) {
+            // Sembunyikan semua konten
+            const views = document.querySelectorAll('.view-section');
+            views.forEach(v => v.classList.remove('active'));
+            
+            // Tampilkan konten yang dipilih
+            document.getElementById('view-' + viewId).classList.add('active');
+
+            // Update status menu sidebar
+            const menus = document.querySelectorAll('.sidebar-menu li');
+            menus.forEach(m => m.classList.remove('active'));
+            
+            if(viewId === 'dashboard') document.getElementById('menu-dashboard').classList.add('active');
+            if(viewId === 'data' || viewId === 'form') document.getElementById('menu-barang').classList.add('active');
+        }
+
+        // Fitur Waktu Realtime (Sesuai rubrik: JavaScript untuk tanggal/waktu)
+        setInterval(() => {
+            const now = new Date();
+            document.getElementById('realtime-clock').innerText = now.toLocaleTimeString('id-ID');
+        }, 1000);
+    </script>
 </body>
 </html>

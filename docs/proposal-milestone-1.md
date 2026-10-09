@@ -1,115 +1,94 @@
 # PROPOSAL PERENCANAAN PROYEK (MILESTONE 1)
 **Mata Kuliah:** Pemrograman Berbasis Web  
-**Tema Proyek:** 1. Sistem Peminjaman Inventaris  
-**Nama Sistem:** Sistem Informasi Peminjaman Inventaris (SIPINJAM)  
+**Tema Pilihan:** 1. Sistem Peminjaman Inventaris  
+**Nama Proyek:** PINJES (Sistem Informasi Peminjaman Inventaris)  
 **Program Studi:** S1 Teknik Informatika - Universitas Dian Nuswantoro  
 
 ---
 
-## 1. Latar Belakang & Identifikasi Masalah
+## 1. Identitas Kelompok & Pembagian Kontribusi
 
-Pengelolaan barang inventaris di lingkungan kampus, khususnya pada tingkat laboratorium praktikum, ruang perlengkapan program studi, maupun sekretariat organisasi mahasiswa, memerlukan pencatatan sirkulasi yang tertib. Peralatan seperti proyektor infocus, kabel converter/HDMI, pointer wireless, kamera dokumentasi, dan perangkat keras praktikum kerap dipinjam secara bergantian oleh dosen maupun mahasiswa.
+Proyek ini dikerjakan secara berkelompok (2 orang) dengan pembagian tugas yang jelas:
 
-Berdasarkan pengamatan di lapangan, proses pencatatan peminjaman sebagian besar masih dilakukan secara konvensional menggunakan buku agenda fisik atau lembaran formulir manual. Praktik pencatatan manual ini menimbulkan beberapa kendala operasional:
-
-1. **Risiko Kerusakan dan Kehilangan Data:**  
-   Buku catatan fisik mudah rusak, kotor, atau terselip di antara tumpukan berkas lainnya. Jika buku tersebut hilang, riwayat peminjaman barang sebelumnya tidak dapat dilacak kembali.
-2. **Ketiadaan Pemantauan Status Secara Terpusat:**  
-   Petugas inventaris tidak memiliki media pemantauan yang cepat untuk melihat ketersediaan barang. Setiap kali ada pihak yang ingin meminjam, petugas harus mencari barang secara fisik di rak penyimpanan untuk memastikan barang tersebut ada dan dalam kondisi baik.
-3. **Kendala Monitoring Batas Pengembalian:**  
-   Pencatatan manual tidak memberikan pengingat atau daftar khusus mengenai barang-barang yang telah melewati tanggal batas pengembalian. Hal ini sering menyebabkan barang inventaris terlambat dikembalikan hingga berminggu-minggu tanpa teguran dari petugas.
-
-Melalui pengembangan **Sistem Informasi Peminjaman Inventaris (SIPINJAM)** berbasis web, proses pencatatan inventaris dan transaksi peminjaman akan dialihkan ke dalam sistem digital yang terpusat, terstruktur, dan mudah dipantau.
-
----
-
-## 2. Tujuan dan Manfaat
-
-### Tujuan Proyek
-1. Membangun aplikasi web peminjaman inventaris sederhana yang memudahkan petugas mencatat data barang dan sirkulasi peminjaman.
-2. Menerapkan materi perkuliahan Pemrograman Berbasis Web secara bertahap, mulai dari perancangan antarmuka HTML/CSS, validasi JavaScript, hingga pengolahan data PHP dan database MySQL.
-3. Mengembangkan kebiasaan kerja terstruktur menggunakan version control Git sesuai tahapan milestone yang ditentukan.
-
-### Manfaat Proyek
-* **Bagi Petugas/Admin:** Mempercepat proses pengecekan stok barang, mengurangi kesalahan pencatatan, dan mempermudah rekapitulasi data peminjam.
-* **Bagi Peminjam:** Mendapatkan kepastian informasi mengenai ketersediaan barang inventaris yang dibutuhkan untuk kegiatan perkuliahan atau acara kampus.
+* **Anggota 1: Mohammad Adam Mahfud (A11.2025.16614)**
+  * Bertanggung jawab pada analisis latar belakang masalah dan perumusan manfaat aplikasi di lingkungan kampus.
+  * Menganalisis target pengguna dan mengidentifikasi kebutuhan pengguna (*user requirements*).
+  * Menyusun daftar kebutuhan fitur utama sistem sesuai rubrik panduan PjBL.
+  * Menginisialisasi repositori Git lokal, menyiapkan berkas `.gitignore`, dan menyusun struktur folder proyek awal.
+  * Menyusun dokumen proposal perencanaan proyek dan berkas `README.md`.
+* **Anggota 2: Muhammad Daffa Dhiya Ulhaq (A11.2025.16515)**
+  * Bertanggung jawab pada perancangan antarmuka pengguna (*wireframing/mockup*).
+  * Membuat berkas rancangan prototipe interaktif pada berkas `wireframe/index.html`.
+  * Merancang tata letak halaman Login, Dashboard ringkasan inventaris, Tabel Data Barang, dan Formulir Tambah Data.
+  * Menambahkan simulasi navigasi antarmuka dan tampilan waktu *real-time* berbasis JavaScript pada bilah atas (*navbar*).
 
 ---
 
-## 3. Profil dan Kebutuhan Pengguna
+## 2. Latar Belakang & Identifikasi Masalah
+
+Peralatan inventaris seperti proyektor infocus, kabel converter/HDMI, pointer wireless presentasi, kamera dokumentasi, dan perangkat praktikum laboratorium sering kali dipinjam oleh mahasiswa maupun dosen untuk menunjang kegiatan perkuliahan dan acara kemahasiswaan.
+
+Berdasarkan pengamatan di lingkungan kampus, proses pencatatan peminjaman barang sebagian besar masih mengandalkan buku agenda fisik atau formulir manual. Metode manual ini menimbulkan beberapa masalah operasional:
+
+1. **Catatan Mudah Terselip atau Hilang:**  
+   Buku catatan fisik berisiko rusak, robek, atau terselip di tumpukan berkas lain. Jika buku tersebut hilang, riwayat peminjaman barang sebelumnya tidak dapat dilacak kembali.
+2. **Sulit Memantau Ketersediaan Barang:**  
+   Petugas inventaris tidak memiliki informasi langsung mengenai status barang. Petugas harus mengecek lemari penyimpanan secara langsung untuk memastikan apakah barang yang ingin dipinjam sedang tersedia atau sedang dibawa orang lain.
+3. **Keterlambatan Pengembalian Sulit Dipantau:**  
+   Tidak adanya catatan status yang terpusat menyebabkan petugas kesulitan melacak barang apa saja yang sudah melewati batas waktu pengembalian.
+
+### Solusi dan Manfaat Aplikasi
+Melalui pengembangan aplikasi **PINJES (Peminjaman Inventaris)**, proses pencatatan dialihkan ke sistem digital berbasis web yang terstruktur:
+* **Bagi Petugas:** Mempermudah pencatatan data barang, memantau barang yang sedang keluar secara cepat, dan mencatat riwayat peminjaman dengan lebih tertib.
+* **Bagi Peminjam:** Memperoleh kepastian ketersediaan alat yang dibutuhkan untuk kegiatan perkuliahan tanpa harus menunggu lama.
+
+---
+
+## 3. Target Pengguna & Kebutuhan Pengguna
 
 ### Target Pengguna
-Aplikasi ini ditujukan bagi:
-1. **Admin / Pengelola Inventaris (Petugas Laboratorium/Perlengkapan):**  
-   Pengguna dengan hak akses penuh yang bertanggung jawab mencatat barang masuk, memperbarui data kondisi barang, mengonfirmasi peminjaman, serta mencatat pengembalian barang.
+1. **Admin / Petugas Inventaris:**  
+   Pengguna utama yang memiliki wewenang untuk mengelola data barang inventaris, mencatat transaksi peminjaman baru, serta memperbarui status saat barang telah dikembalikan.
 2. **Peminjam (Mahasiswa / Dosen):**  
-   Pengguna yang memerlukan fasilitas inventaris untuk kegiatan belajar mengajar atau kegiatan organisasi kampus.
+   Pengguna yang meminjam barang inventaris untuk kegiatan belajar mengajar atau kegiatan organisasi kampus.
 
-### Analisis Kebutuhan Pengguna (User Needs)
-* Pengguna membutuhkan antarmuka login yang jelas dan aman.
-* Pengguna membutuhkan ringkasan jumlah barang (tersedia vs sedang dipinjam) pada halaman utama (dashboard).
-* Pengguna membutuhkan formulir yang mudah dipahami saat menginput data barang maupun transaksi peminjaman baru.
-* Pengguna membutuhkan fitur pencarian pada daftar barang agar tidak membuang waktu menggulir tabel yang panjang.
-* Pengguna membutuhkan konfirmasi peringatan saat akan menghapus data penting.
-
----
-
-## 4. Ruang Lingkup dan Rencana Fitur Aplikasi
-
-Sesuai dengan panduan Project Based Learning (PjBL), aplikasi ini dirancang dengan fitur inti sebagai berikut:
-
-### A. Fitur Wajib (Core Features)
-1. **Autentikasi & Sesi (Session):**
-   * Halaman login dengan username dan password.
-   * Session PHP untuk mengamankan halaman internal (dashboard dan manajemen data).
-   * Fitur logout untuk mengakhiri sesi pengguna secara aman.
-2. **Dashboard Interaktif:**
-   * Kartu ringkasan informasi: Total Barang, Barang Tersedia, Barang Sedang Dipinjam, dan Transaksi Berjalan.
-   * Widget tanggal dan jam real-time menggunakan JavaScript.
-   * Tabel cuplikan aktivitas transaksi peminjaman terbaru.
-3. **Manajemen Kategori Barang:**
-   * Menambah kategori baru (contoh: Peralatan Audio Visual, Aksesoris Komputer, Alat Praktikum).
-   * Mengubah dan menghapus data kategori.
-4. **Manajemen Data Barang (Inventaris):**
-   * Mencatat informasi barang: Kode Barang, Nama Barang, Kategori, Kondisi (Baik/Rusak Ringan), dan Status (Tersedia/Dipinjam).
-   * Menampilkan data dalam tabel dengan fitur pencarian dan pagination AJAX.
-   * Form tambah dan edit data barang.
-   * Hapus data barang dengan konfirmasi peringatan.
-5. **Manajemen Transaksi Peminjaman:**
-   * Form pencatatan peminjaman (nama peminjam, NIM/kontak, barang yang dipinjam, tanggal pinjam, batas kembali).
-   * Pembaruan status transaksi: `Dipinjam` -> `Dikembalikan` / `Dibatalkan`.
-   * Saat barang dipinjam, status ketersediaan barang otomatis berubah menjadi "Dipinjam".
-
-### B. Rencana Fitur Tambahan (Pengembangan Opsional)
-* Filter data peminjaman berdasarkan status (aktif / selesai).
-* Tanda peringatan visual (warna merah) untuk transaksi peminjaman yang telah melewati jatuh tempo.
-* Cetak lembar bukti peminjaman format sederhana untuk arsip fisik.
+### Kebutuhan Pengguna (User Requirements)
+* Petugas membutuhkan antarmuka login untuk mengamankan data inventaris dari pihak luar.
+* Petugas membutuhkan tampilan dashboard yang menampilkan ringkasan angka: total barang, barang yang tersedia, dan barang yang sedang dipinjam.
+* Petugas membutuhkan tabel daftar inventaris yang rapi, dilengkapi status ketersediaan (*badge* Tersedia / Dipinjam) serta tombol aksi Edit dan Hapus.
+* Petugas membutuhkan formulir input yang mudah diisi dengan data nama barang, kategori, dan deskripsi kondisi fisik.
+* Petugas membutuhkan fitur pencarian pada tabel data agar mudah menemukan barang tertentu.
 
 ---
 
-## 5. Rencana Wireframe Antarmuka
+## 4. Kebutuhan Fitur Utama Sistem
 
-Pada Milestone 1 ini, dibuat empat rancangan antarmuka dasar dalam bentuk dokumen HTML responsif dan terstruktur:
+Mengacu pada ketentuan panduan PjBL, daftar kebutuhan fitur utama yang direncanakan meliputi:
 
-1. **Wireframe Login (`wireframe/login.html`):**  
-   Menampilkan form masuk terpusat dengan input username, password, dan tombol aksi login.
-2. **Wireframe Dashboard (`wireframe/dashboard.html`):**  
-   Menampilkan navigasi samping (sidebar), bilah atas dengan jam JavaScript, 4 kartu ringkasan data, dan tabel peminjaman terkini.
-3. **Wireframe Daftar Data Barang (`wireframe/daftar-barang.html`):**  
-   Menampilkan tabel inventaris lengkap dengan tombol tambah data, kotak pencarian, badge status kondisi/ketersediaan, tombol aksi Edit/Hapus, serta komponen navigasi halaman (pagination).
-4. **Wireframe Form Input Peminjaman (`wireframe/form-peminjaman.html`):**  
-   Menampilkan formulir bertingkat dengan input nama peminjam, nomor identitas (NIM/NIDN), dropdown pemilihan barang, pemilih tanggal pinjam, batas kembali, dan textarea catatan.
+1. **Fitur Autentikasi:** Form login, logout, dan sistem session untuk membatasi akses halaman.
+2. **Fitur Dashboard:** Ringkasan statistik jumlah barang, barang tersedia, barang dipinjam, total transaksi, dan informasi waktu real-time.
+3. **Fitur Kelola Kategori:** Pengelompokan barang berdasarkan jenis (misal: Elektronik, Multimedia, Alat Lab).
+4. **Fitur Kelola Data Inventaris:** Menambah, menampilkan, mengubah, dan menghapus data barang inventaris.
+5. **Fitur Kelola Peminjaman:** Formulir pencatatan transaksi peminjaman baru serta pembaruan status transaksi.
+6. **Fitur Pencarian & Konfirmasi Hapus:** Pencarian cepat nama barang dan konfirmasi sebelum melakukan penghapusan data.
 
 ---
 
-## 6. Jadwal & Rencana Kerja Bertahap (Roadmap PjBL)
+## 5. Perancangan Wireframe Antarmuka
 
-| Milestone | Minggu | Topik Pembelajaran | Target Utama |
-| :--- | :---: | :--- | :--- |
-| **Milestone 1** | 1–2 | Perencanaan & Wireframe | Identifikasi masalah, proposal fitur, wireframe antarmuka, struktur repo Git. |
-| **Milestone 2** | 3–4 | Front-end & Interaktivitas | Implementasi antarmuka HTML/CSS responsif, validasi input, tampilan waktu JS. |
-| **Milestone 3** | 5–6 | Autentikasi PHP | Pembuatan form login, session PHP, proteksi halaman, logout. |
-| **Milestone 4** | 7–8 | Database & Read Data | Skema tabel MySQL, koneksi PHP-MySQL, pembacaan data ke dashboard & tabel. |
-| **Milestone 5** | 9–10 | Create & Update Data | Form tambah/edit data inventaris dan peminjaman, validasi sisi server. |
-| **Milestone 6** | 11–12 | Delete & Pagination AJAX | Fitur hapus data berkonfirmasi, pagination dengan jQuery AJAX, filter pencarian. |
-| **Milestone 7** | 13–14 | Testing & Deployment | Pengujian sistem, penyelesaian bug, upload ke web hosting, dokumentasi akhir. |
+Perancangan antarmuka telah diselesaikan oleh **Muhammad Daffa Dhiya Ulhaq** dalam berkas prototipe terpadu `wireframe/index.html` dengan rincian:
+
+1. **Wireframe Login (`#login-page`):** Form masuk akun petugas kampus dengan input email/username, kata sandi, dan tombol masuk.
+2. **Wireframe Dashboard (`#view-dashboard`):** Menampilkan navbar dengan jam real-time, sidebar navigasi, 4 kartu ringkasan (Total Barang: 124, Tersedia: 102, Dipinjam: 22, Total Transaksi: 845), dan area aktivitas terbaru.
+3. **Wireframe Daftar Data Barang (`#view-data`):** Tabel daftar inventaris memuat kolom No, Nama Barang, Kategori, Status ketersediaan, kotak pencarian, tombol aksi Edit/Hapus, dan pagination.
+4. **Wireframe Form Tambah Data (`#view-form`):** Formulir input penambahan barang baru dengan input nama barang, pilihan dropdown kategori, textarea deskripsi/kondisi fisik, dan tombol simpan/batal.
+
+---
+
+## 6. Persiapan Lingkungan Kerja (Milestone 1)
+
+Pada Milestone 1 ini, persiapan lingkungan kerja yang telah diselesaikan meliputi:
+* Inisialisasi repositori Git lokal untuk pencatatan riwayat progres pengerjaan proyek.
+* Penyiapan berkas `.gitignore` untuk menyaring file sementara bawaan editor dan sistem operasi.
+* Penyusunan struktur folder proyek awal (`docs/` dan `wireframe/`).
+* Dokumentasi perencanaan lengkap pada berkas `README.md` dan proposal ini.

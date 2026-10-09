@@ -1,38 +1,38 @@
 # Log Penggunaan AI (AI Usage Log)
 **Mata Kuliah:** Pemrograman Berbasis Web  
-**Proyek:** Sistem Informasi Peminjaman Inventaris (SIPINJAM)  
-**Tahapan:** Milestone 1 (Perencanaan dan Persiapan Lingkungan Kerja)
+**Proyek:** PINJES (Sistem Informasi Peminjaman Inventaris)  
+**Tahapan:** Milestone 1 (Perencanaan Proyek dan Persiapan Lingkungan Kerja)
 
 ---
 
 ### Catatan Penggunaan 1
 * **Tanggal:** 9 Oktober 2026
 * **Tujuan Penggunaan AI:**  
-  Mendapatkan referensi struktur direktori proyek web PHP native yang rapi dan standar untuk memisahkan berkas aset, konfigurasi, dokumentasi, dan rancangan antarmuka.
+  Mencari referensi identifikasi masalah umum dalam pengelolaan inventaris barang di lingkungan kampus untuk memperkaya latar belakang proposal.
 * **Prompt / Pertanyaan:**  
-  "Bagaimana susunan folder proyek web PHP native sederhana yang baik untuk tugas kuliah, agar file CSS, JS, konfigurasi database, dan dokumen perancangan terpisah secara rapi?"
+  "Apa saja kendala nyata yang sering terjadi jika peminjaman barang inventaris di kampus seperti proyektor dan alat lab masih dicatat secara manual di buku?"
 * **Bagian yang Dihasilkan / Dibantu AI:**  
-  Rekomendasi pemisahan folder menjadi `assets/`, `config/`, `docs/`, dan `wireframe/`.
+  Daftar poin kendala: buku manual rentan hilang/rusak, status barang keluar/masuk sulit dipantau secara langsung, dan keterlambatan pengembalian sulit dilacak.
 * **Penjelasan Mahasiswa dengan Bahasa Sendiri:**  
-  Pemisahan struktur folder bertujuan agar file-file dengan fungsi berbeda tidak tercampur dalam satu direktori utama. Folder `assets/` digunakan khusus untuk file statis seperti CSS dan JS yang dipanggil oleh peramban, folder `config/` digunakan untuk berkas logika internal seperti koneksi database, dan folder `docs/` digunakan untuk menyimpan berkas dokumentasi proposal.
+  Poin-poin tersebut sangat relevan dengan kondisi riil di kampus saat meminjam alat praktikum atau proyektor. Pencatatan manual membuat petugas harus mengecek rak barang satu per satu dan sering lupa siapa yang sedang membawa barang tersebut.
 * **Penyesuaian / Perbaikan oleh Mahasiswa:**  
-  Menambahkan subfolder `wireframe/` khusus untuk menyimpan rancangan antarmuka Milestone 1 agar file HTML wireframe tidak bertabrakan dengan file PHP aplikasi yang akan dibangun pada milestone berikutnya.
+  Menyusun kembali poin-poin tersebut dengan bahasa sendiri ke dalam bagian Latar Belakang Masalah pada file `README.md` dan proposal proyek.
 * **Hasil Pengujian:**  
-  Struktur folder berhasil dibuat dan tertata dengan rapi pada repositori Git proyek.
+  Latar belakang masalah tersusun dengan runtut dan sesuai dengan kondisi nyata yang dihadapi di kampus.
 
 ---
 
 ### Catatan Penggunaan 2
 * **Tanggal:** 9 Oktober 2026
 * **Tujuan Penggunaan AI:**  
-  Mencari ide penataan tata letak (*layout*) wireframe untuk dashboard inventaris agar informasi status barang (tersedia vs dipinjam) dapat dilihat secara cepat oleh admin.
+  Memahami fungsi berkas `.gitignore` untuk inisialisasi repositori Git pada proyek web.
 * **Prompt / Pertanyaan:**  
-  "Komponen informasi apa saja yang umumnya ditampilkan pada dashboard sistem peminjaman barang inventaris agar informatif bagi admin?"
+  "Apa fungsi file .gitignore pada repository Git dan file apa saja yang sebaiknya dimasukkan ke dalamnya untuk proyek web pemula?"
 * **Bagian yang Dihasilkan / Dibantu AI:**  
-  Saran komponen: kartu statistik ringkasan data di bagian atas (total barang, barang ada, barang keluar), widget jam/tanggal, serta tabel ringkas transaksi peminjaman terakhir.
+  Penjelasan bahwa `.gitignore` berfungsi menyaring file konfigurasi editor (seperti `.vscode/`), file sementara sistem operasi (`Thumbs.db`, `.DS_Store`), agar tidak ikut terunggah ke repositori Git.
 * **Penjelasan Mahasiswa dengan Bahasa Sendiri:**  
-  Dashboard adalah halaman pertama yang dilihat admin setelah berhasil login. Penempatan kartu statistik angka di bagian paling atas memudahkan admin mengetahui kondisi inventaris tanpa perlu membuka menu data barang satu per satu.
+  File `.gitignore` penting dibuat sejak commit pertama agar repositori Git tetap bersih dari file-file bawaan komputer atau editor yang tidak dibutuhkan orang lain saat membuka proyek ini.
 * **Penyesuaian / Perbaikan oleh Mahasiswa:**  
-  Mengimplementasikan susunan kartu statistik dan tabel tersebut ke dalam file `wireframe/dashboard.html` dengan desain wireframe monokrom abu-abu yang sederhana dan mudah dipahami.
+  Membuat file `.gitignore` di folder utama proyek dan menambahkan aturan pengabaian file sementara.
 * **Hasil Pengujian:**  
-  File `wireframe/dashboard.html` dibuka melalui browser dan seluruh elemen tata letak tampil proporsional serta mudah dibaca.
+  Repositori Git berhasil diinisialisasi dan file yang tidak relevan berhasil disaring dengan benar.
