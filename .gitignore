@@ -1,0 +1,17 @@
+# Environment & OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor & IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# PHP / Composer / Local server
+/vendor/
+*.log
+
+# Sensitive credentials (untuk nanti)
+config/database_secret.php
