@@ -1,17 +1,8 @@
-# Environment & OS files
-.DS_Store
+# Berkas sementara sistem operasi (Windows & Mac)
 Thumbs.db
 desktop.ini
+.DS_Store
 
-# Editor & IDE files
+# Pengaturan text editor lokal
 .vscode/
 .idea/
-*.sublime-project
-*.sublime-workspace
-
-# PHP / Composer / Local server
-/vendor/
-*.log
-
-# Sensitive credentials (untuk nanti)
-config/database_secret.php

@@ -74,7 +74,7 @@ Rancangan wireframe antarmuka sistem dikerjakan oleh **Muhammad Daffa Dhiya Ulha
 3. **Wireframe Daftar Data Barang:** Tabel data inventaris lengkap dengan pencarian nama barang, tombol aksi Edit/Hapus, status badge (Tersedia/Dipinjam), dan navigasi pagination.
 4. **Wireframe Form Tambah Data:** Formulir penambahan data barang baru (nama barang, kategori, deskripsi kondisi fisik, dan tombol simpan/batal).
 
-*Dokumentasi wireframe dapat dilihat pada:* [`wireframe/README.md`](wireframe/README.md)
+*Berkas wireframe dapat langsung diuji pada peramban melalui:* [`wireframe/index.html`](wireframe/index.html)
 
 ---
 
@@ -86,9 +86,8 @@ peminjaman-inventaris/
 │   ├── proposal-milestone-1.md   # Dokumen proposal perencanaan proyek
 │   └── AI_USAGE_LOG.md           # Catatan log penggunaan AI sesuai panduan PjBL
 ├── wireframe/
-│   ├── index.html                # Prototipe wireframe antarmuka interaktif (oleh M. Daffa)
-│   └── README.md                 # Dokumentasi pengujian rancangan wireframe
-├── .gitignore                    # Konfigurasi pengabaian file Git
+│   └── index.html                # Prototipe wireframe interaktif (oleh M. Daffa)
+├── .gitignore                    # Konfigurasi pengabaian file sampah Git
 └── README.md                     # Berkas dokumentasi utama proyek
 ```
 
