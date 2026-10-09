@@ -1,0 +1,8 @@
+# Berkas sementara sistem operasi (Windows & Mac)
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Pengaturan text editor lokal
+.vscode/
+.idea/
