@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Barang - PINJES</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-shell">
+
+        <!-- SIDEBAR KIRI -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-text">PINJES</div>
+                <div class="logo-sub">Inventaris Kampus</div>
+            </div>
+            <div class="sidebar-label">Navigasi</div>
+            <ul class="sidebar-nav">
+                <li><a href="dashboard.html">📊 &nbsp;Dashboard</a></li>
+                <li class="aktif"><a href="data-barang.html">📦 &nbsp;Data Barang</a></li>
+                <li><a href="tambah-barang.html">✏️ &nbsp;Tambah Barang</a></li>
+                <li><a href="peminjaman.html">📋 &nbsp;Peminjaman</a></li>
+                <li class="menu-keluar">
+                    <a href="index.html" onclick="return confirm('Yakin ingin keluar dari sistem?');">🚪 &nbsp;Keluar</a>
+                </li>
+            </ul>
+        </aside>
+
+        <div class="main-content">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <h1>Data Barang</h1>
+                    <span class="breadcrumb">/ Kelola Inventaris</span>
+                </div>
+                <div class="topbar-right">
+                    <div id="realtime-clock" class="jam-digital">memuat...</div>
+                    <div class="profil-user">
+                        <div class="avatar">A</div>
+                        <div class="info-user">
+                            <div class="nama-user">Admin Lab</div>
+                            <div class="role-user">Petugas Inventaris</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="konten">
+
+                <div class="judul-halaman" style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <div>
+                        <h2>Daftar Barang Inventaris</h2>
+                        <p>Kelola seluruh data barang, kondisi unit, dan ketersediaan stok.</p>
+                    </div>
+                    <a href="tambah-barang.html" class="btn btn-hijau">+ Tambah Barang</a>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="toolbar-tabel">
+                            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                                <input type="text" id="search-barang" class="form-input kotak-cari" placeholder="🔍 Cari nama barang atau kode...">
+                                <select class="form-input" style="width: 170px;">
+                                    <option value="">Semua Kategori</option>
+                                    <option>Elektronik</option>
+                                    <option>Multimedia</option>
+                                    <option>Alat Lab</option>
+                                    <option>Audio</option>
+                                </select>
+                            </div>
+                            <div style="font-size: 12px; color: #94a3b8;">Menampilkan <strong>6</strong> dari <strong>124</strong> data</div>
+                        </div>
+
+                        <table class="tabel-data">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Kode</th>
+                                    <th>Nama Barang</th>
+                                    <th>Kategori</th>
+                                    <th>Kondisi</th>
+                                    <th>Jml</th>
+                                    <th>Status</th>
+                                    <th style="text-align: center;">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><strong>INV-EL-001</strong></td>
+                                    <td>Proyektor Epson EB-X05</td>
+                                    <td>Elektronik</td>
+                                    <td>Baik</td>
+                                    <td>3</td>
+                                    <td><span class="badge badge-dipinjam">Sebagian Dipinjam</span></td>
+                                    <td style="text-align: center;">
+                                        <a href="edit-barang.html?id=1" class="btn btn-abu btn-kecil">Edit</a>
+                                        <button class="btn btn-merah btn-kecil" onclick="konfirmasiHapus('Proyektor Epson EB-X05')">Hapus</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><strong>INV-MM-002</strong></td>
+                                    <td>Kamera DSLR Canon EOS 90D</td>
+                                    <td>Multimedia</td>
+                                    <td>Sangat Baik</td>
+                                    <td>1</td>
+                                    <td><span class="badge badge-dipinjam">Dipinjam</span></td>
+                                    <td style="text-align: center;">
+                                        <a href="edit-barang.html?id=2" class="btn btn-abu btn-kecil">Edit</a>
+                                        <button class="btn btn-merah btn-kecil" onclick="konfirmasiHapus('Kamera DSLR Canon EOS 90D')">Hapus</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td><strong>INV-AU-003</strong></td>
+                                    <td>Mikrofon Wireless Shure BLX24</td>
+                                    <td>Audio</td>
+                                    <td>Normal</td>
+                                    <td>2</td>
+                                    <td><span class="badge badge-tersedia">Tersedia</span></td>
+                                    <td style="text-align: center;">
+                                        <a href="edit-barang.html?id=3" class="btn btn-abu btn-kecil">Edit</a>
+                                        <button class="btn btn-merah btn-kecil" onclick="konfirmasiHapus('Mikrofon Wireless Shure BLX24')">Hapus</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td><strong>INV-EL-004</strong></td>
+                                    <td>Presenter Pointer Logitech R400</td>
+                                    <td>Elektronik</td>
+                                    <td>Baik</td>
+                                    <td>4</td>
+                                    <td><span class="badge badge-tersedia">Tersedia</span></td>
+                                    <td style="text-align: center;">
+                                        <a href="edit-barang.html?id=4" class="btn btn-abu btn-kecil">Edit</a>
+                                        <button class="btn btn-merah btn-kecil" onclick="konfirmasiHapus('Presenter Pointer Logitech R400')">Hapus</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td><strong>INV-LB-005</strong></td>
+                                    <td>Arduino Uno Starter Kit</td>
+                                    <td>Alat Lab</td>
+                                    <td>Lengkap</td>
+                                    <td>10</td>
+                                    <td><span class="badge badge-tersedia">Tersedia</span></td>
+                                    <td style="text-align: center;">
+                                        <a href="edit-barang.html?id=5" class="btn btn-abu btn-kecil">Edit</a>
+                                        <button class="btn btn-merah btn-kecil" onclick="konfirmasiHapus('Arduino Uno Starter Kit')">Hapus</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td><strong>INV-MM-006</strong></td>
+                                    <td>Tripod Kamera Takara ECO-193A</td>
+                                    <td>Multimedia</td>
+                                    <td>Perlu Perawatan</td>
+                                    <td>2</td>
+                                    <td><span class="badge badge-rusak">Perbaikan</span></td>
+                                    <td style="text-align: center;">
+                                        <a href="edit-barang.html?id=6" class="btn btn-abu btn-kecil">Edit</a>
+                                        <button class="btn btn-merah btn-kecil" onclick="konfirmasiHapus('Tripod Kamera Takara ECO-193A')">Hapus</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="pagination">
+                            <button class="page-btn">&laquo; Sebelumnya</button>
+                            <button class="page-btn aktif">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <button class="page-btn">Selanjutnya &raquo;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
