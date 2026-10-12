@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk - PINJES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="masuk">
+
+        <section class="masuk-kiri">
+            <div class="logo">Pinjes</div>
+
+            <div>
+                <h2>Peminjaman barang kampus, tercatat rapi.</h2>
+                <p>Pantau stok, siapa yang meminjam, dan kapan barang harus kembali, tanpa buku agenda.</p>
+            </div>
+
+            <div class="masuk-kredit">
+                Proyek PjBL &middot; Pemrograman Berbasis Web<br>
+                Adam Mahfud &amp; Daffa Dhiya Ulhaq &middot; TI UDINUS
+            </div>
+        </section>
+
+        <section class="masuk-kanan">
+            <form class="masuk-form" action="dashboard.html" method="get" autocomplete="off">
+                <h1>Masuk</h1>
+                <p>Gunakan akun petugas inventaris.</p>
+
+                <div class="form-group">
+                    <label for="username" class="form-label">Username atau email</label>
+                    <input type="text" id="username" name="username" class="form-input" placeholder="admin@kampus.ac.id" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Kata sandi</label>
+                    <input type="password" id="password" name="password" class="form-input" placeholder="Masukkan kata sandi" required>
+                </div>
+
+                <div class="baris-opsi">
+                    <label><input type="checkbox"> Ingat saya</label>
+                    <a href="#">Lupa sandi?</a>
+                </div>
+
+                <button type="submit" class="btn btn-utama btn-penuh">Masuk</button>
+
+                <p class="catatan-demo">Versi prototipe: isi kolom dengan teks apa saja untuk melanjutkan.</p>
+            </form>
+        </section>
+
+    </div>
+
+</body>
+</html>
