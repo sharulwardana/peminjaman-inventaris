@@ -29,8 +29,8 @@
 
 ### Milestone 2 — Front-End & Interaksi Dasar
 * **Adam Mahfud:**
-  * Membuat halaman login statis (`index.html`) dengan desain background gradient gelap dan card login yang bersih.
-  * Membuat halaman dashboard (`dashboard.html`) dengan layout sidebar gelap, topbar sticky, 4 kartu ringkasan statistik, dan tabel aktivitas peminjaman terbaru.
+  * Membuat halaman login statis (`index.html`) dengan tata letak dua kolom (panel aksen + form masuk).
+  * Membuat halaman dashboard (`dashboard.html`) dengan sidebar terang, topbar sticky, ringkasan statistik, bar ketersediaan, dan tabel peminjaman terbaru.
   * Mengembangkan fitur jam dan tanggal real-time menggunakan JavaScript (`js/main.js`) yang menampilkan waktu format Indonesia di navbar.
   * Memperbarui dokumentasi README dan catatan AI Usage Log.
 * **Daffa Dhiya Ulhaq:**
@@ -89,9 +89,9 @@ Halaman statis sudah selesai dibangun menggunakan **HTML**, **CSS murni**, dan *
 
 | Halaman | File | Deskripsi |
 | :--- | :--- | :--- |
-| Login | `index.html` | Form username/password, background gradient gelap, card putih bersih |
-| Dashboard | `dashboard.html` | Sidebar gelap fixed, topbar dengan jam real-time, 4 kartu statistik, tabel aktivitas terbaru |
-| Daftar Barang | `data-barang.html` | Tabel inventaris lengkap, badge status, pencarian live, pagination statis |
+| Login | `index.html` | Form username/password, layout dua kolom |
+| Dashboard | `dashboard.html` | Sidebar fixed, topbar dengan jam real-time, ringkasan statistik, tabel peminjaman terbaru |
+| Daftar Barang | `data-barang.html` | Tabel inventaris, status, pencarian + filter kategori, pagination statis |
 | Tambah Barang | `tambah-barang.html` | Form input barang baru + validasi JavaScript |
 | Edit Barang | `edit-barang.html` | Form perbarui data barang + validasi |
 | Peminjaman | `peminjaman.html` | Daftar transaksi peminjaman aktif |

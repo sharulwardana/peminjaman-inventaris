@@ -4,143 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peminjaman - PINJES</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <div class="app-shell">
+    <aside class="sisi">
+        <a href="dashboard.html" class="merek">
+            <span class="merek-nama">Pinjes<span>.</span></span>
+            <span class="merek-ket">Inventaris Kampus</span>
+        </a>
+        <nav class="menu">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="data-barang.html">Data Barang</a>
+            <a href="tambah-barang.html">Tambah Barang</a>
+            <a href="peminjaman.html" class="aktif">Peminjaman</a>
+        </nav>
+        <a href="index.html" class="menu-keluar" onclick="return confirm('Yakin ingin keluar dari sistem?');">Keluar</a>
+    </aside>
 
-        <aside class="sidebar">
-            <div class="sidebar-logo">
-                <div class="logo-text">PINJES</div>
-                <div class="logo-sub">Inventaris Kampus</div>
+    <div class="utama">
+
+        <header class="atas">
+            <div id="realtime-clock" class="jam">memuat...</div>
+            <div class="pengguna">
+                <div class="avatar">A</div>
+                <div class="pengguna-teks">
+                    <div class="pengguna-nama">Admin Lab</div>
+                    <div class="pengguna-peran">Petugas Inventaris</div>
+                </div>
             </div>
-            <div class="sidebar-label">Navigasi</div>
-            <ul class="sidebar-nav">
-                <li><a href="dashboard.html">📊 &nbsp;Dashboard</a></li>
-                <li><a href="data-barang.html">📦 &nbsp;Data Barang</a></li>
-                <li><a href="tambah-barang.html">✏️ &nbsp;Tambah Barang</a></li>
-                <li class="aktif"><a href="peminjaman.html">📋 &nbsp;Peminjaman</a></li>
-                <li class="menu-keluar">
-                    <a href="index.html" onclick="return confirm('Yakin ingin keluar dari sistem?');">🚪 &nbsp;Keluar</a>
-                </li>
-            </ul>
-        </aside>
+        </header>
 
-        <div class="main-content">
-            <header class="topbar">
-                <div class="topbar-left">
+        <main class="isi">
+
+            <div class="judul-halaman">
+                <div>
                     <h1>Peminjaman</h1>
-                    <span class="breadcrumb">/ Transaksi Aktif</span>
+                    <p>Catatan peminjaman, tanggal pengembalian, dan statusnya.</p>
                 </div>
-                <div class="topbar-right">
-                    <div id="realtime-clock" class="jam-digital">memuat...</div>
-                    <div class="profil-user">
-                        <div class="avatar">A</div>
-                        <div class="info-user">
-                            <div class="nama-user">Admin Lab</div>
-                            <div class="role-user">Petugas Inventaris</div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            <div class="konten">
-
-                <div class="judul-halaman" style="display: flex; justify-content: space-between; align-items: flex-start;">
-                    <div>
-                        <h2>Daftar Transaksi Peminjaman</h2>
-                        <p>Pantau catatan peminjaman barang, tanggal pengembalian, dan status.</p>
-                    </div>
-                    <button class="btn btn-hijau" onclick="alert('Form pencatatan peminjaman akan diintegrasikan dengan database PHP pada Milestone selanjutnya.');">+ Catat Peminjaman</button>
-                </div>
-
-                <div class="panel">
-                    <div class="panel-body">
-                        <div class="toolbar-tabel">
-                            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-                                <input type="text" id="search-barang" class="form-input kotak-cari" placeholder="🔍 Cari peminjam atau barang...">
-                                <select class="form-input" style="width: 170px;">
-                                    <option value="">Semua Status</option>
-                                    <option>Dipinjam</option>
-                                    <option>Dikembalikan</option>
-                                    <option>Terlambat</option>
-                                </select>
-                            </div>
-                            <div style="font-size: 12px; color: #94a3b8;">Total: <strong>4</strong> transaksi</div>
-                        </div>
-
-                        <table class="tabel-data">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Kode Transaksi</th>
-                                    <th>Peminjam</th>
-                                    <th>Barang</th>
-                                    <th>Tgl Pinjam</th>
-                                    <th>Batas Kembali</th>
-                                    <th>Status</th>
-                                    <th style="text-align: center;">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td><strong>TRX-20261012-01</strong></td>
-                                    <td>Budi Santoso (A11.2023.15001)</td>
-                                    <td>Proyektor Epson EB-X05</td>
-                                    <td>12 Okt 2026</td>
-                                    <td>13 Okt 2026</td>
-                                    <td><span class="badge badge-dipinjam">Dipinjam</span></td>
-                                    <td style="text-align: center;">
-                                        <button class="btn btn-abu btn-kecil" onclick="alert('Simulasi konfirmasi pengembalian.');">Kembalikan</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td><strong>TRX-20261011-04</strong></td>
-                                    <td>Rian Hidayat (BEM FT)</td>
-                                    <td>Kamera DSLR Canon EOS 90D</td>
-                                    <td>11 Okt 2026</td>
-                                    <td>14 Okt 2026</td>
-                                    <td><span class="badge badge-dipinjam">Dipinjam</span></td>
-                                    <td style="text-align: center;">
-                                        <button class="btn btn-abu btn-kecil" onclick="alert('Simulasi konfirmasi pengembalian.');">Kembalikan</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td><strong>TRX-20261010-02</strong></td>
-                                    <td>Siti Aminah (Lab Jaringan)</td>
-                                    <td>Kabel HDMI 15M + Converter</td>
-                                    <td>10 Okt 2026</td>
-                                    <td>10 Okt 2026</td>
-                                    <td><span class="badge badge-kembali">Dikembalikan</span></td>
-                                    <td style="text-align: center;"><span style="font-size: 11px; color: #94a3b8;">Selesai</span></td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td><strong>TRX-20261009-01</strong></td>
-                                    <td>Anisa Rahma (A12.2023.09881)</td>
-                                    <td>Presenter Pointer Logitech</td>
-                                    <td>09 Okt 2026</td>
-                                    <td>09 Okt 2026</td>
-                                    <td><span class="badge badge-kembali">Dikembalikan</span></td>
-                                    <td style="text-align: center;"><span style="font-size: 11px; color: #94a3b8;">Selesai</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="pagination">
-                            <button class="page-btn">&laquo; Sebelumnya</button>
-                            <button class="page-btn aktif">1</button>
-                            <button class="page-btn">Selanjutnya &raquo;</button>
-                        </div>
-                    </div>
-                </div>
+                <button class="btn btn-utama" onclick="alert('Form catat peminjaman belum aktif di versi prototipe ini.');">Catat peminjaman</button>
             </div>
-        </div>
+
+            <section class="panel">
+
+                <div class="toolbar">
+                    <div class="toolbar-kiri">
+                        <input type="text" id="search-barang" class="form-input kotak-cari" placeholder="Cari peminjam atau barang">
+                        <select id="filter-kolom" data-kolom="5" class="form-input pilih-filter">
+                            <option value="">Semua status</option>
+                            <option>Dipinjam</option>
+                            <option>Dikembalikan</option>
+                            <option>Terlambat</option>
+                        </select>
+                    </div>
+                    <div class="toolbar-info">Menampilkan <strong id="jumlah-tampil">4</strong> transaksi</div>
+                </div>
+
+                <div class="tabel-wrap">
+                    <table class="tabel-data">
+                        <thead>
+                            <tr>
+                                <th>Kode transaksi</th>
+                                <th>Peminjam</th>
+                                <th>Barang</th>
+                                <th>Tgl pinjam</th>
+                                <th>Batas kembali</th>
+                                <th>Status</th>
+                                <th class="tengah">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="kode">TRX-20261012-01</td>
+                                <td>Budi Santoso<div class="sub">A11.2023.15001</div></td>
+                                <td>Proyektor Epson EB-X05</td>
+                                <td>12 Okt 2026</td>
+                                <td>13 Okt 2026</td>
+                                <td><span class="badge badge-dipinjam">Dipinjam</span></td>
+                                <td class="tengah"><button class="btn btn-garis btn-kecil" onclick="alert('Simulasi: pengembalian dicatat.');">Kembalikan</button></td>
+                            </tr>
+                            <tr>
+                                <td class="kode">TRX-20261011-04</td>
+                                <td>Rian Hidayat<div class="sub">BEM Fakultas Teknik</div></td>
+                                <td>Kamera DSLR Canon EOS 90D</td>
+                                <td>11 Okt 2026</td>
+                                <td>14 Okt 2026</td>
+                                <td><span class="badge badge-dipinjam">Dipinjam</span></td>
+                                <td class="tengah"><button class="btn btn-garis btn-kecil" onclick="alert('Simulasi: pengembalian dicatat.');">Kembalikan</button></td>
+                            </tr>
+                            <tr>
+                                <td class="kode">TRX-20261010-02</td>
+                                <td>Siti Aminah<div class="sub">Lab Jaringan</div></td>
+                                <td>Kabel HDMI 15 m + converter</td>
+                                <td>10 Okt 2026</td>
+                                <td>10 Okt 2026</td>
+                                <td><span class="badge badge-kembali">Dikembalikan</span></td>
+                                <td class="tengah"><span class="status-selesai">Selesai</span></td>
+                            </tr>
+                            <tr>
+                                <td class="kode">TRX-20261009-01</td>
+                                <td>Anisa Rahma<div class="sub">A12.2023.09881</div></td>
+                                <td>Presenter Pointer Logitech R400</td>
+                                <td>09 Okt 2026</td>
+                                <td>09 Okt 2026</td>
+                                <td><span class="badge badge-kembali">Dikembalikan</span></td>
+                                <td class="tengah"><span class="status-selesai">Selesai</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p id="data-kosong" class="kosong">Tidak ada transaksi yang cocok dengan pencarian.</p>
+
+                <div class="pagination">
+                    <button class="page-btn">&laquo; Sebelumnya</button>
+                    <button class="page-btn aktif">1</button>
+                    <button class="page-btn">Selanjutnya &raquo;</button>
+                </div>
+
+            </section>
+
+        </main>
     </div>
 
     <script src="js/main.js"></script>

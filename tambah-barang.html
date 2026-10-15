@@ -4,129 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Barang - PINJES</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <div class="app-shell">
+    <aside class="sisi">
+        <a href="dashboard.html" class="merek">
+            <span class="merek-nama">Pinjes<span>.</span></span>
+            <span class="merek-ket">Inventaris Kampus</span>
+        </a>
+        <nav class="menu">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="data-barang.html">Data Barang</a>
+            <a href="tambah-barang.html" class="aktif">Tambah Barang</a>
+            <a href="peminjaman.html">Peminjaman</a>
+        </nav>
+        <a href="index.html" class="menu-keluar" onclick="return confirm('Yakin ingin keluar dari sistem?');">Keluar</a>
+    </aside>
 
-        <aside class="sidebar">
-            <div class="sidebar-logo">
-                <div class="logo-text">PINJES</div>
-                <div class="logo-sub">Inventaris Kampus</div>
+    <div class="utama">
+
+        <header class="atas">
+            <div id="realtime-clock" class="jam">memuat...</div>
+            <div class="pengguna">
+                <div class="avatar">A</div>
+                <div class="pengguna-teks">
+                    <div class="pengguna-nama">Admin Lab</div>
+                    <div class="pengguna-peran">Petugas Inventaris</div>
+                </div>
             </div>
-            <div class="sidebar-label">Navigasi</div>
-            <ul class="sidebar-nav">
-                <li><a href="dashboard.html">📊 &nbsp;Dashboard</a></li>
-                <li><a href="data-barang.html">📦 &nbsp;Data Barang</a></li>
-                <li class="aktif"><a href="tambah-barang.html">✏️ &nbsp;Tambah Barang</a></li>
-                <li><a href="peminjaman.html">📋 &nbsp;Peminjaman</a></li>
-                <li class="menu-keluar">
-                    <a href="index.html" onclick="return confirm('Yakin ingin keluar dari sistem?');">🚪 &nbsp;Keluar</a>
-                </li>
-            </ul>
-        </aside>
+        </header>
 
-        <div class="main-content">
-            <header class="topbar">
-                <div class="topbar-left">
+        <main class="isi">
+
+            <div class="judul-halaman">
+                <div>
                     <h1>Tambah Barang</h1>
-                    <span class="breadcrumb">/ Input Data Baru</span>
+                    <p>Daftarkan peralatan inventaris baru ke sistem.</p>
                 </div>
-                <div class="topbar-right">
-                    <div id="realtime-clock" class="jam-digital">memuat...</div>
-                    <div class="profil-user">
-                        <div class="avatar">A</div>
-                        <div class="info-user">
-                            <div class="nama-user">Admin Lab</div>
-                            <div class="role-user">Petugas Inventaris</div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            <div class="konten">
-
-                <div class="judul-halaman" style="display: flex; justify-content: space-between; align-items: flex-start;">
-                    <div>
-                        <h2>Form Tambah Barang Baru</h2>
-                        <p>Daftarkan perlengkapan atau peralatan inventaris baru ke sistem.</p>
-                    </div>
-                    <a href="data-barang.html" class="btn btn-abu">← Kembali</a>
-                </div>
-
-                <div class="panel" style="max-width: 720px;">
-                    <div class="panel-body">
-
-                        <div id="form-alert" class="notif"></div>
-
-                        <form id="form-barang" novalidate>
-
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-                                <div class="form-group">
-                                    <label for="kode_barang" class="form-label">Kode Barang <span class="wajib">*</span></label>
-                                    <input type="text" id="kode_barang" name="kode_barang" class="form-input" placeholder="INV-EL-007" required>
-                                    <div class="pesan-error">Kode barang harus diisi.</div>
-                                    <span class="form-hint">Format: INV-[Kategori]-[Nomor]</span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="kategori" class="form-label">Kategori <span class="wajib">*</span></label>
-                                    <select id="kategori" name="kategori" class="form-input" required>
-                                        <option value="">Pilih Kategori</option>
-                                        <option value="Elektronik">Elektronik</option>
-                                        <option value="Multimedia">Multimedia</option>
-                                        <option value="Alat Laboratorium">Alat Laboratorium</option>
-                                        <option value="Audio">Audio</option>
-                                        <option value="Perlengkapan Umum">Perlengkapan Umum</option>
-                                    </select>
-                                    <div class="pesan-error">Pilih salah satu kategori.</div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="nama_barang" class="form-label">Nama Barang <span class="wajib">*</span></label>
-                                <input type="text" id="nama_barang" name="nama_barang" class="form-input" placeholder="contoh: Proyektor InFocus IN112x" required>
-                                <div class="pesan-error">Nama barang minimal 3 karakter.</div>
-                            </div>
-
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-                                <div class="form-group">
-                                    <label for="jumlah" class="form-label">Jumlah Unit <span class="wajib">*</span></label>
-                                    <input type="number" id="jumlah" name="jumlah" class="form-input" value="1" min="1" required>
-                                    <div class="pesan-error">Jumlah minimal 1.</div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="kondisi" class="form-label">Kondisi Fisik</label>
-                                    <select id="kondisi" name="kondisi" class="form-input">
-                                        <option value="Baik">Baik (Normal)</option>
-                                        <option value="Sangat Baik">Sangat Baik (Baru)</option>
-                                        <option value="Kurang Baik">Kurang Baik</option>
-                                        <option value="Rusak">Rusak / Perbaikan</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="lokasi" class="form-label">Lokasi Penyimpanan</label>
-                                <input type="text" id="lokasi" name="lokasi" class="form-input" placeholder="contoh: Lemari A - Rak 2 Lab Jaringan">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="keterangan" class="form-label">Catatan / Kelengkapan</label>
-                                <textarea id="keterangan" name="keterangan" class="form-input" rows="3" placeholder="Tuliskan catatan kelengkapan aksesoris barang..."></textarea>
-                            </div>
-
-                            <div class="form-footer">
-                                <a href="data-barang.html" class="btn btn-abu">Batal</a>
-                                <button type="submit" class="btn btn-hijau">Simpan Data</button>
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
+                <a href="data-barang.html" class="btn btn-garis">Kembali</a>
             </div>
-        </div>
+
+            <section class="panel panel-form">
+                <div class="panel-isi">
+
+                    <div id="form-alert" class="notif"></div>
+
+                    <form id="form-barang" novalidate>
+
+                        <div class="baris-2">
+                            <div class="form-group">
+                                <label for="kode_barang" class="form-label">Kode barang <span class="wajib">*</span></label>
+                                <input type="text" id="kode_barang" name="kode_barang" class="form-input" placeholder="INV-EL-007">
+                                <div class="pesan-error"></div>
+                                <span class="form-hint">Format: INV-[kategori]-[nomor]</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="kategori" class="form-label">Kategori <span class="wajib">*</span></label>
+                                <select id="kategori" name="kategori" class="form-input">
+                                    <option value="">Pilih kategori</option>
+                                    <option value="Elektronik">Elektronik</option>
+                                    <option value="Multimedia">Multimedia</option>
+                                    <option value="Alat Laboratorium">Alat Laboratorium</option>
+                                    <option value="Audio">Audio</option>
+                                    <option value="Perlengkapan Umum">Perlengkapan Umum</option>
+                                </select>
+                                <div class="pesan-error"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nama_barang" class="form-label">Nama barang <span class="wajib">*</span></label>
+                            <input type="text" id="nama_barang" name="nama_barang" class="form-input" placeholder="contoh: Proyektor InFocus IN112x">
+                            <div class="pesan-error"></div>
+                        </div>
+
+                        <div class="baris-2">
+                            <div class="form-group">
+                                <label for="jumlah" class="form-label">Jumlah unit <span class="wajib">*</span></label>
+                                <input type="number" id="jumlah" name="jumlah" class="form-input" value="1" min="1">
+                                <div class="pesan-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="kondisi" class="form-label">Kondisi fisik</label>
+                                <select id="kondisi" name="kondisi" class="form-input">
+                                    <option value="Baik">Baik</option>
+                                    <option value="Sangat Baik">Sangat Baik (baru)</option>
+                                    <option value="Kurang Baik">Kurang Baik</option>
+                                    <option value="Rusak">Rusak / perlu perbaikan</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lokasi" class="form-label">Lokasi penyimpanan</label>
+                            <input type="text" id="lokasi" name="lokasi" class="form-input" placeholder="contoh: Lemari A, rak 2 Lab Jaringan">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="keterangan" class="form-label">Catatan / kelengkapan</label>
+                            <textarea id="keterangan" name="keterangan" class="form-input" rows="3" placeholder="Aksesori atau kelengkapan yang ikut dengan barang"></textarea>
+                        </div>
+
+                        <div class="form-footer">
+                            <a href="data-barang.html" class="btn btn-garis">Batal</a>
+                            <button type="submit" class="btn btn-utama">Simpan data</button>
+                        </div>
+                    </form>
+
+                </div>
+            </section>
+
+        </main>
     </div>
 
     <script src="js/main.js"></script>

@@ -4,190 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - PINJES</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <div class="app-shell">
+    <aside class="sisi">
+        <a href="dashboard.html" class="merek">
+            <span class="merek-nama">Pinjes<span>.</span></span>
+            <span class="merek-ket">Inventaris Kampus</span>
+        </a>
+        <nav class="menu">
+            <a href="dashboard.html" class="aktif">Dashboard</a>
+            <a href="data-barang.html">Data Barang</a>
+            <a href="tambah-barang.html">Tambah Barang</a>
+            <a href="peminjaman.html">Peminjaman</a>
+        </nav>
+        <a href="index.html" class="menu-keluar" onclick="return confirm('Yakin ingin keluar dari sistem?');">Keluar</a>
+    </aside>
 
-        <!-- SIDEBAR KIRI -->
-        <aside class="sidebar">
-            <div class="sidebar-logo">
-                <div class="logo-text">PINJES</div>
-                <div class="logo-sub">Inventaris Kampus</div>
+    <div class="utama">
+
+        <header class="atas">
+            <div id="realtime-clock" class="jam">memuat...</div>
+            <div class="pengguna">
+                <div class="avatar">A</div>
+                <div class="pengguna-teks">
+                    <div class="pengguna-nama">Admin Lab</div>
+                    <div class="pengguna-peran">Petugas Inventaris</div>
+                </div>
+            </div>
+        </header>
+
+        <main class="isi">
+
+            <div class="judul-halaman">
+                <div>
+                    <h1>Ringkasan Inventaris</h1>
+                    <p>Kondisi barang inventaris kampus saat ini.</p>
+                </div>
             </div>
 
-            <div class="sidebar-label">Navigasi</div>
-            <ul class="sidebar-nav">
-                <li class="aktif">
-                    <a href="dashboard.html">📊 &nbsp;Dashboard</a>
-                </li>
-                <li>
-                    <a href="data-barang.html">📦 &nbsp;Data Barang</a>
-                </li>
-                <li>
-                    <a href="tambah-barang.html">✏️ &nbsp;Tambah Barang</a>
-                </li>
-                <li>
-                    <a href="peminjaman.html">📋 &nbsp;Peminjaman</a>
-                </li>
-                <li class="menu-keluar">
-                    <a href="index.html" onclick="return confirm('Yakin ingin keluar dari sistem?');">
-                        🚪 &nbsp;Keluar
-                    </a>
-                </li>
-            </ul>
-        </aside>
-
-        <!-- AREA KONTEN UTAMA -->
-        <div class="main-content">
-
-            <!-- TOPBAR / NAVBAR ATAS -->
-            <header class="topbar">
-                <div class="topbar-left">
-                    <h1>Dashboard</h1>
-                    <span class="breadcrumb">/ Beranda</span>
+            <section class="ringkasan">
+                <div class="ringkasan-item">
+                    <div class="ringkasan-label">Total barang</div>
+                    <div class="ringkasan-angka">124</div>
+                    <div class="ringkasan-ket">unit terdaftar</div>
                 </div>
-
-                <div class="topbar-right">
-                    <div id="realtime-clock" class="jam-digital">memuat...</div>
-                    <div class="profil-user">
-                        <div class="avatar">A</div>
-                        <div class="info-user">
-                            <div class="nama-user">Admin Lab</div>
-                            <div class="role-user">Petugas Inventaris</div>
-                        </div>
-                    </div>
+                <div class="ringkasan-item">
+                    <div class="ringkasan-label">Tersedia</div>
+                    <div class="ringkasan-angka">102</div>
+                    <div class="ringkasan-ket">siap dipinjam</div>
                 </div>
-            </header>
-
-            <!-- KONTEN HALAMAN -->
-            <div class="konten">
-
-                <div class="judul-halaman">
-                    <h2>Ringkasan Inventaris</h2>
-                    <p>Data statistik barang inventaris kampus saat ini.</p>
+                <div class="ringkasan-item">
+                    <div class="ringkasan-label">Sedang dipinjam</div>
+                    <div class="ringkasan-angka">22</div>
+                    <div class="ringkasan-ket">belum kembali</div>
                 </div>
-
-                <!-- 4 KARTU STATISTIK -->
-                <div class="grid-stats">
-                    <div class="kartu-stat hijau">
-                        <div class="ikon-stat">📦</div>
-                        <div class="angka">124</div>
-                        <div class="label-stat">Total Barang Terdaftar</div>
-                    </div>
-
-                    <div class="kartu-stat biru">
-                        <div class="ikon-stat">✅</div>
-                        <div class="angka">102</div>
-                        <div class="label-stat">Barang Tersedia</div>
-                    </div>
-
-                    <div class="kartu-stat kuning">
-                        <div class="ikon-stat">🔄</div>
-                        <div class="angka">22</div>
-                        <div class="label-stat">Sedang Dipinjam</div>
-                    </div>
-
-                    <div class="kartu-stat ungu">
-                        <div class="ikon-stat">📝</div>
-                        <div class="angka">845</div>
-                        <div class="label-stat">Total Transaksi</div>
-                    </div>
+                <div class="ringkasan-item">
+                    <div class="ringkasan-label">Total transaksi</div>
+                    <div class="ringkasan-angka">845</div>
+                    <div class="ringkasan-ket">sejak sistem dipakai</div>
                 </div>
+            </section>
 
-                <!-- TABEL AKTIVITAS PEMINJAMAN TERBARU -->
-                <div class="panel">
-                    <div class="panel-header">
-                        <h3>Aktivitas Peminjaman Terbaru</h3>
-                        <a href="peminjaman.html" class="btn btn-abu btn-kecil">Lihat Semua →</a>
-                    </div>
-                    <div class="panel-body" style="padding: 0;">
-                        <table class="tabel-data">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Peminjam</th>
-                                    <th>Barang</th>
-                                    <th>Tanggal Pinjam</th>
-                                    <th>Batas Kembali</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>
-                                        <strong>Budi Santoso</strong>
-                                        <div style="font-size: 11px; color: #94a3b8;">Mahasiswa TI</div>
-                                    </td>
-                                    <td>Proyektor Epson EB-X05</td>
-                                    <td>12 Okt 2026</td>
-                                    <td>13 Okt 2026</td>
-                                    <td><span class="badge badge-dipinjam">Dipinjam</span></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>
-                                        <strong>Siti Aminah</strong>
-                                        <div style="font-size: 11px; color: #94a3b8;">Staff Lab Jaringan</div>
-                                    </td>
-                                    <td>Kabel HDMI 15M + Converter</td>
-                                    <td>12 Okt 2026</td>
-                                    <td>12 Okt 2026</td>
-                                    <td><span class="badge badge-kembali">Dikembalikan</span></td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>
-                                        <strong>Rian Hidayat</strong>
-                                        <div style="font-size: 11px; color: #94a3b8;">BEM Fakultas Teknik</div>
-                                    </td>
-                                    <td>Kamera DSLR Canon 90D</td>
-                                    <td>11 Okt 2026</td>
-                                    <td>14 Okt 2026</td>
-                                    <td><span class="badge badge-dipinjam">Dipinjam</span></td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>
-                                        <strong>Anisa Rahma</strong>
-                                        <div style="font-size: 11px; color: #94a3b8;">Mahasiswa SI</div>
-                                    </td>
-                                    <td>Presenter Pointer Wireless</td>
-                                    <td>10 Okt 2026</td>
-                                    <td>10 Okt 2026</td>
-                                    <td><span class="badge badge-kembali">Dikembalikan</span></td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>
-                                        <strong>Dimas Prayogo</strong>
-                                        <div style="font-size: 11px; color: #94a3b8;">HMTI</div>
-                                    </td>
-                                    <td>Mikrofon Wireless Shure</td>
-                                    <td>09 Okt 2026</td>
-                                    <td>11 Okt 2026</td>
-                                    <td><span class="badge badge-kembali">Dikembalikan</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <section class="ketersediaan">
+                <div class="ketersediaan-atas">
+                    <strong>Ketersediaan barang</strong>
+                    <span class="pudar">102 dari 124 unit ada di tempat</span>
                 </div>
-
-                <!-- CATATAN INFORMASI PETUGAS -->
-                <div class="info-box">
-                    <p>
-                        <strong>Catatan untuk petugas:</strong> Selalu pastikan kartu identitas peminjam (KTM/KTP) sudah diverifikasi
-                        sebelum menyerahkan barang inventaris. Barang yang melewati batas waktu pengembalian akan otomatis ditandai
-                        sebagai terlambat pada milestone berikutnya ketika sistem sudah terintegrasi dengan database.
-                    </p>
+                <div class="bar">
+                    <span class="bar-tersedia"></span>
+                    <span class="bar-dipinjam"></span>
                 </div>
+                <div class="legenda">
+                    <span>Tersedia 82%</span>
+                    <span>Dipinjam 18%</span>
+                </div>
+            </section>
 
-            </div>
-        </div>
+            <section class="panel">
+                <div class="panel-kepala">
+                    <h2>Peminjaman terbaru</h2>
+                    <a href="peminjaman.html" class="btn btn-garis btn-kecil">Lihat semua</a>
+                </div>
+                <div class="tabel-wrap">
+                    <table class="tabel-data">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Peminjam</th>
+                                <th>Barang</th>
+                                <th>Tanggal pinjam</th>
+                                <th>Batas kembali</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Budi Santoso<div class="sub">Mahasiswa TI</div></td>
+                                <td>Proyektor Epson EB-X05</td>
+                                <td>12 Okt 2026</td>
+                                <td>13 Okt 2026</td>
+                                <td><span class="badge badge-dipinjam">Dipinjam</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Siti Aminah<div class="sub">Staff Lab Jaringan</div></td>
+                                <td>Kabel HDMI 15 m + converter</td>
+                                <td>12 Okt 2026</td>
+                                <td>12 Okt 2026</td>
+                                <td><span class="badge badge-kembali">Dikembalikan</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Rian Hidayat<div class="sub">BEM Fakultas Teknik</div></td>
+                                <td>Kamera DSLR Canon EOS 90D</td>
+                                <td>11 Okt 2026</td>
+                                <td>14 Okt 2026</td>
+                                <td><span class="badge badge-dipinjam">Dipinjam</span></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Anisa Rahma<div class="sub">Mahasiswa SI</div></td>
+                                <td>Presenter Pointer Logitech R400</td>
+                                <td>10 Okt 2026</td>
+                                <td>10 Okt 2026</td>
+                                <td><span class="badge badge-kembali">Dikembalikan</span></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Dimas Prayogo<div class="sub">HMTI</div></td>
+                                <td>Mikrofon Wireless Shure BLX24</td>
+                                <td>09 Okt 2026</td>
+                                <td>11 Okt 2026</td>
+                                <td><span class="badge badge-kembali">Dikembalikan</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
+            <p class="catatan">
+                <strong>Catatan petugas:</strong> cek KTM atau KTP peminjam sebelum menyerahkan barang.
+                Barang yang lewat batas kembali akan ditandai terlambat setelah sistem terhubung ke database.
+            </p>
+
+        </main>
     </div>
 
     <script src="js/main.js"></script>
