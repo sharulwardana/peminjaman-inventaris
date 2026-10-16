@@ -96,11 +96,8 @@ Halaman statis sudah selesai dibangun menggunakan **HTML**, **CSS murni**, dan *
 | Edit Barang | `edit-barang.html` | Form perbarui data barang + validasi |
 | Peminjaman | `peminjaman.html` | Daftar transaksi peminjaman aktif |
 
-### Fitur JavaScript:
-* **Jam real-time** — tampil di navbar atas dengan format "Senin, 12 Okt 2026 • 10:30:45"
-* **Validasi form** — kolom wajib dicek saat submit, muncul pesan error kalau kosong
-* **Pencarian live** — filter baris tabel langsung saat mengetik
-* **Konfirmasi hapus** — dialog `confirm()` sebelum menghapus data
+### Fitur JavaScript (Milestone 2):
+* **Jam & tanggal real-time** — menampilkan hari, tanggal, bulan, tahun, serta jam di navbar atas yang diperbarui otomatis setiap detik dalam format Bahasa Indonesia.
 
 ---
 

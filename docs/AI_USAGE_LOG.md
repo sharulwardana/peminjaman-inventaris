@@ -63,14 +63,14 @@
 ### Catatan 4
 * **Tanggal:** 12 Oktober 2026
 * **Tujuan:**  
-  Mempelajari cara validasi form di sisi browser supaya kolom wajib nggak bisa disubmit kosong.
+  Mempelajari cara validasi form ringan di sisi browser untuk memastikan kolom wajib tidak kosong.
 * **Prompt:**  
-  "Gimana cara bikin validasi form HTML sederhana pakai JavaScript tanpa library, biar muncul pesan error kalau inputnya kosong?"
+  "Bagaimana cara membuat validasi ringan pada form HTML untuk field wajib diisi agar sesuai target Milestone 2 tanpa perlu JavaScript yang rumit?"
 * **Hasil dari AI:**  
-  Penjelasan tentang `event.preventDefault()` untuk mencegah halaman reload saat tombol submit diklik, pengecekan `input.value.trim()` untuk cek apakah isian kosong, dan penambahan class CSS untuk menandai input yang error.
+  Penjelasan tentang atribut bawaan HTML5 `required` pada elemen `<input>` dan `<select>`, serta cara kerjanya yang otomatis memunculkan peringatan browser jika form dikirim dalam keadaan kosong.
 * **Pemahaman saya:**  
-  Kalau form di-submit tanpa `preventDefault()`, halaman langsung reload dan user nggak sempat lihat pesan errornya. Dengan JavaScript, kita bisa tahan dulu submit-nya, cek satu-satu tiap input, kalau ada yang kosong kita tandai inputnya (misalnya border jadi merah), dan baru boleh submit kalau semuanya sudah terisi.
+  Validasi form ringan untuk Milestone 2 cukup memanfaatkan atribut `required` bawaan HTML5. Browser secara native akan menolak submit jika ada kolom wajib yang kosong, sehingga kode JavaScript di `js/main.js` bisa tetap bersih, fokus pada tanggal dan waktu real-time, dan mudah dipahami.
 * **Yang saya ubah:**  
-  Saya sesuaikan nama ID input dengan field yang kita pakai (`kode_barang`, `nama_barang`, `kategori`, `jumlah`). Pesan error saya tulis dalam bahasa Indonesia yang jelas. Kalau validasi lolos, saya tambahkan notifikasi sukses warna hijau dan redirect otomatis ke halaman daftar barang setelah 1 detik.
+  Menambahkan atribut `required` pada field kode barang, nama barang, kategori, dan jumlah di `tambah-barang.html` dan `edit-barang.html`.
 * **Hasil:**  
-  Form tambah dan edit barang berhasil menolak input kosong dengan tampilan error yang jelas, dan menampilkan pesan sukses kalau data lengkap.
+  Form secara otomatis menolak submit jika ada field wajib yang belum terisi tanpa memerlukan script tambahan yang rumit.

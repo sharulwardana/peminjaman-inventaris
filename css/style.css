@@ -172,7 +172,7 @@ h1, h2, h3 {
 }
 
 .merek-nama {
-    display: block;
+    display: block; 
     font-family: var(--font-judul);
     font-size: 28px;
     font-weight: 600;

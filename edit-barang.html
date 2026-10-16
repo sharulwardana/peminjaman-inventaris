@@ -52,38 +52,34 @@
 
                     <div id="form-alert" class="notif"></div>
 
-                    <form id="form-barang" novalidate>
+                    <form id="form-barang" action="data-barang.html">
 
                         <div class="baris-2">
                             <div class="form-group">
                                 <label for="kode_barang" class="form-label">Kode barang <span class="wajib">*</span></label>
-                                <input type="text" id="kode_barang" name="kode_barang" class="form-input" value="INV-EL-001">
-                                <div class="pesan-error"></div>
+                                <input type="text" id="kode_barang" name="kode_barang" class="form-input" value="INV-EL-001" required>
                             </div>
                             <div class="form-group">
                                 <label for="kategori" class="form-label">Kategori <span class="wajib">*</span></label>
-                                <select id="kategori" name="kategori" class="form-input">
+                                <select id="kategori" name="kategori" class="form-input" required>
                                     <option value="Elektronik" selected>Elektronik</option>
                                     <option value="Multimedia">Multimedia</option>
                                     <option value="Alat Laboratorium">Alat Laboratorium</option>
                                     <option value="Audio">Audio</option>
                                     <option value="Perlengkapan Umum">Perlengkapan Umum</option>
                                 </select>
-                                <div class="pesan-error"></div>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="nama_barang" class="form-label">Nama barang <span class="wajib">*</span></label>
-                            <input type="text" id="nama_barang" name="nama_barang" class="form-input" value="Proyektor Epson EB-X05">
-                            <div class="pesan-error"></div>
+                            <input type="text" id="nama_barang" name="nama_barang" class="form-input" value="Proyektor Epson EB-X05" required>
                         </div>
 
                         <div class="baris-2">
                             <div class="form-group">
                                 <label for="jumlah" class="form-label">Jumlah unit <span class="wajib">*</span></label>
-                                <input type="number" id="jumlah" name="jumlah" class="form-input" value="3" min="1">
-                                <div class="pesan-error"></div>
+                                <input type="number" id="jumlah" name="jumlah" class="form-input" value="3" min="1" required>
                             </div>
                             <div class="form-group">
                                 <label for="kondisi" class="form-label">Kondisi fisik</label>
