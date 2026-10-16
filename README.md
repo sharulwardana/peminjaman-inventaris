@@ -142,11 +142,13 @@ Aplikasi ini masih berupa halaman statis (belum ada backend/database), jadi ting
 3. `ui: membuat rancangan wireframe antarmuka login, dashboard, daftar data, dan form`
 4. `ui: integrasi hasil wireframe antarmuka interaktif PINJES dari rekan kelompok`
 5. `chore: perapian berkas gitignore dan struktur dokumentasi milestone 1`
-6. `docs: sinkronisasi catatan log penggunaan AI dengan berkas proyek`
+6. `chore: perapian berkas dokumentasi proposal ke dalam README`
+7. `docs: sinkronisasi catatan log penggunaan AI dengan berkas proyek`
 
 ### Milestone 2:
-7. `feat: membuat halaman login statis dan file css utama`
-8. `feat: membuat halaman dashboard dengan layout sidebar dan kartu statistik`
-9. `feat: membuat halaman data barang, form tambah dan edit barang`
-10. `feat: menambahkan javascript jam realtime dan validasi form`
-11. `docs: memperbarui readme dan ai usage log untuk milestone 2`
+8. `feat: implementasi front-end dan interaksi dasar milestone 2`
+9. `feat: perbaikan tampilan responsif, dropdown, dan tata letak UI PINJES`
+10. `feat: add CSS styles, AI usage log, and main JavaScript logic for inventory management app`
+11. `feat: add real-time clock script displaying current date and time in main.js`
+12. `feat: add stylesheet with custom properties and base styles for inventory application`
+13. `docs: finalisasi dokumentasi README dan penyederhanaan kode milestone 2`
