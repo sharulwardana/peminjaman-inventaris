@@ -622,22 +622,10 @@ h1, h2, h3 {
     transition: border-color 0.15s, box-shadow 0.15s;
 }
 
-/* styling khusus elemen dropdown (select) agar panah rapi dan tidak mepet garis kanan */
+/* styling elemen dropdown (select) standar */
 select.form-input {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     background-color: var(--putih);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b665d' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    background-size: 15px 15px;
-    padding-right: 42px;
     cursor: pointer;
-}
-
-select.form-input:focus {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a63d24' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 }
 
 select.form-input option {
